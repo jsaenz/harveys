@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Harvey's Skin Diving Supply, Inc.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- styles -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <style>
+
+    /* GLOBAL STYLES
+    -------------------------------------------------- */
+    /*  lighter body text footer background to match navbar and fixed height*/
+
+    body {
+      color: #d0d0d0;
+      background: #0066cc;
+    }
+
+    footer {
+      background: #213458;
+      height: 60px;
+      text-align: center;
+    }
+
+    /* CUSTOMIZE THE NAVBAR
+    -------------------------------------------------- */
+
+    /* Special class on .container surrounding .navbar, used for positioning it into place. */
+    .navbar-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      margin-top: 20px;
+      margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
+    }
+    .navbar-wrapper .navbar {
+
+    }
+
+    /* Remove border and change up box shadow for more contrast */
+    .navbar .navbar-inner {
+      border: 0;
+      background: #213458;
+      -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+         -moz-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+              box-shadow: 0 2px 10px rgba(0,0,0,.25);
+    }
+
+    /* Downsize the brand/project name a bit */
+    .navbar .brand {
+      padding: 14px 20px 16px; /* Increase vertical padding to match navbar links */
+      font-size: 16px;
+      font-weight: bold;
+      text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+      
+      height: 50px;
+      width: 150px;
+}
+    }
+
+    /* Navbar links: increase padding for taller navbar */
+    .navbar .nav > li > a {
+      padding: 15px 20px;
+    }
+
+    /* Offset the responsive button for proper vertical alignment */
+    .navbar .btn-navbar {
+      margin-top: 10px;
+    }
+
+
+    /* Featurettes
+    ------------------------- */
+
+    .container-featurettes {
+      margin-top: 100px;
+      width: 70%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .featurette-divider {
+      margin: 60px 0; /* Space out the Bootstrap <hr> more */
+    }
+    .featurette {
+      padding-top: 60px; /* Vertically center images part 1: add padding above and below text. */
+      overflow: hidden; /* Vertically center images part 2: clear their floats. */
+      background: #213458;
+    }
+    .featurette-image {
+      margin-top: 20px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+    }
+
+    /* Give some space on the sides of the floated elements so text doesn't run right into it. */
+    .featurette-image.pull-left {
+      margin-right: 40px;
+    }
+    .featurette-image.pull-right {
+      margin-left: 40px;
+    }
+
+    /* Thin out the marketing headings */
+    .featurette-heading {
+      font-size: 40px;
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+
+  /*resize lead font*/
+  .lead {
+    font-size:14px;
+  }
+
+
+    /* RESPONSIVE CSS
+    -------------------------------------------------- */
+
+    @media (max-width: 979px) {
+
+      .container.navbar-wrapper {
+        margin-bottom: 0;
+        width: auto;
+      }
+      .navbar-inner {
+        border-radius: 0;
+        margin: -20px 0;
+      }
+
+      .featurette {
+        height: auto;
+        padding: 0;
+      }
+      .featurette-image.pull-left,
+      .featurette-image.pull-right {
+        display: block;
+        float: none;
+        max-width: 40%;
+        margin: 0 auto 20px;
+      }
+    }
+
+
+    @media (max-width: 767px) {
+
+      .navbar-inner {
+        margin: -20px;
+      }
+
+      .featurette-heading {
+        font-size: 30px;
+      }
+      .featurette .lead {
+        font-size: 18px;
+        line-height: 1;
+      }
+    }
+    </style>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="ico/favicon.png">
+  </head>
+
+  <body>
+
+    <!-- NAVBAR
+    ================================================== -->
+    <div class="navbar-wrapper">
+      <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
+      <div class="container">
+        <div class="navbar navbar-inverse">
+          <div class="navbar-inner">
+            <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="index.html"><img src="img/logo_name.png"></a>
+            <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+            <!--<img src="img/harveys-logo-name.jpg"title="Harveys logo" alt="Harveys logo">-->            
+            <div class="nav-collapse collapse">
+              <ul class="nav">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="dry_suits.html">Dry Suits</a></li>
+                    <li><a href="warm_water_suits.html">Warm Water Suits</a></li>
+                    <li><a href="cold_water_suits.html">Cold Water Suits</a></li>
+                    <li><a href="accessories.html">Accessories</a></li>
+                    <li class="divider"></li>
+                    <li><a href="sizes.html">Sizes</a></li>
+                    <li><a href="custom.html">Custom Department</a></li>
+                  </ul>
+                </li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="dealer_locator.html">Dealer Locator</a></li>
+                <li class="dropdown active">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">About<b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li class="active"><a href="about.html">The Company</a></li>
+                    <li><a href="thermal_protection.html">Thermal Protection</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div><!-- /.navbar-inner -->
+        </div><!-- /.navbar -->
+      </div> <!-- /.container -->
+    </div><!-- /.navbar-wrapper -->
+
+
+    <!-- START THE FEATURETTES -->
+    <div class="container-featurettes">
+
+      <hr class="featurette-divider">
+
+      <div class="featurette" >
+        <img class="featurette-image pull-left" src="img/harvey.jpg">
+        <h2 class="featurette-heading">Harvey Grohs<br><span class="muted">A True American Success Story:</span></h2>
+
+        <p class="lead">&emsp;Fireworks salesman, potato peddler, street cop, intrepid underwater explorer and self made millionaire.  "Fairly Honest Harvey" The Cold Warrior, is the story of the grandson of an indentured Swedish servant and a Chinese merchant who has dressed millions of people around the world in his famously warm and toasty wet suits.</p>
+
+        <p class="lead">&emsp;His book Fairly Honest Harvey: "The Cold Warrior" is an insiders look into the life of the man whose adventures above and below the waves in the diving business are legendary.  Harvey was a clever, inventive genius, who thrived on competition and adversity. He continuously outmaneuvered the competition and created staunch business relations and friendships in 35 countries around the globe.</p>
+
+        <p class="lead">&emsp;If you enjoy diving, you'll love Harvey's story, from diving for victims, contraband and evidence in the Willamette River for the Portland, OR Police Department to opening his own dive shop in West Seattle to building the best wet &amp; dry suits in the world for the US Navy Seals, James Bond's famous "Goldfinger" underwater chase scenes to special suits  for Jacques Cousteau's TV special "Octopus, Octopus".  Harvey has made a career of surpassing his customers needs and expectations. </p>
+
+        <p class="lead">&emsp;Harvey, ever the ladies man, was also instrumental in getting women into the sport of SCUBA diving when he started making custom dive suits especially for women in the early 1970's.  Ever the entrepreneur he also won a Presidential E Award for his efforts to export American made Rubatex rubber to over 40 countries about this same time.</p>
+
+        <p class="lead">&emsp;Never satisfied he began making USGC Approved Exposure Suits affectionately called "Gumby's by fishermen and sailors alike on F/V &amp; OGV.  He actually tested these suits in his home swimming pool by filling up the pool with truckloads of ice to simulate figid artic waters.</p>
+
+        <img class="featurette-image pull-right" src="img/harveys_catalog_cover.jpg">
+
+        <p class="lead">&emsp;Today Harvey's is still going strong after more than 50 years as a leader in the diving industry.  Harvey passed on his knowledge to his son Larry, who in turn is teaching the business to the 3rd Generation of Grohs'.   Preparing to take the helm as Harvey's enters it's sixth decade of domestic rubber garment production are Grand Kids: Nina, Kristina, Matthew &amp; Gregory continue the Harvey's legacy as Larry prepares to pass the torch to Harvey's grandchildren. </p>
+
+        <p class="lead">&emsp;Today 95% of our product line is still cut, glued and sewn right here in the good old USA.  Nina, Kris &amp; Matt work in the office and Greg is the head cutter and runs the production crew &amp; helps Larry keep all the equipment up to speed.</p>
+
+        <p class="lead">&emsp;Unfortunately, Harvey left us a few years ago passing within a year after his beloved wife Wilma "The Welder" whom he met in Portland, OR.  She was the original "Flash Dance" gal, working in the local shipyard as a plate welder.  She was all of about 5' 2" tall and a real "classy lady".   She was also just tough enough to tell Harvey where he could get off when he went over the top!</p>
+
+
+        <p class="lead">&emsp;Harvey's often told the story of how he won her heart over with some home cooked spaghetti, garlic bread and some red wine.</p>
+
+        <p class="lead">&emsp;We wish them both the best and know that they are both looking down on us from on high with big smiles on their faces ☺</p>
+
+        <p class="lead">&emsp;God Bless You Grandma &amp; Grandpa,</p>
+
+        <p class="lead">Nina, Kris, Matt &amp; Gregg</p>
+
+        <img class="featurette-image pull-left" src="img/whale_cover.jpg">
+      </div>
+
+      <hr class="featurette-divider">
+      <!-- /END THE FEATURETTES -->
+
+      <!-- FOOTER -->
+      <footer>
+        <p>Call Toll-Free 1-800-347-0054 &middot; &copy; 2013 Harvey's Divesuits, All Rights Reserved.</p>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+      </footer>
+    </div><!-- /.container -->
+
+    <!--javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+      !function ($) {
+        $(function(){
+          // carousel demo
+          $('#myCarousel').carousel()
+        })
+      }(window.jQuery)
+    </script>
+    <script src="js/holder.js"></script>
+  </body>
+</html>

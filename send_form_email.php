@@ -52,11 +52,8 @@ if(isset($_POST['email'])) {
         !isset($_POST['Forehead_to_Back_of_Neck']) ||
         !isset($_POST['Head_Circumference']) ||
         !isset($_POST['Shoe_Size']) ||
-        !isset($_POST['Glove_Size']) ||
-        !isset($_POST['']) ||
-        !isset($_POST['']) ||
-
-        ) {
+        !isset($_POST['Glove_Size']))
+       {
         died('We are sorry, but there appears to be a problem with the form you submitted.');       
     }
      

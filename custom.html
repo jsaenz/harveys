@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Harvey's Skin Diving Supply, Inc.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- styles -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <style>
+
+    /* GLOBAL STYLES
+    -------------------------------------------------- */
+    /*  lighter body text footer background to match navbar and fixed height*/
+
+    body {
+      color: #d0d0d0;
+      background: #0066cc;
+    }
+
+    footer {
+      background: #213458;
+      height: 60px;
+      text-align: center;
+    }
+
+    a{
+      color: #a0a0a0;
+    }
+
+    /* CUSTOMIZE THE NAVBAR
+    -------------------------------------------------- */
+
+    /* Special class on .container surrounding .navbar, used for positioning it into place. */
+    .navbar-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      margin-top: 20px;
+      margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
+    }
+    .navbar-wrapper .navbar {
+
+    }
+
+    /* Remove border and change up box shadow for more contrast */
+    .navbar .navbar-inner {
+      border: 0;
+      background: #213458;
+      -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+         -moz-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+              box-shadow: 0 2px 10px rgba(0,0,0,.25);
+    }
+
+    /* Downsize the brand/project name a bit */
+    .navbar .brand {
+      padding: 14px 20px 16px; /* Increase vertical padding to match navbar links */
+      font-size: 16px;
+      font-weight: bold;
+      text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+      
+      height: 50px;
+      width: 150px;
+}
+    }
+
+    /* Navbar links: increase padding for taller navbar */
+    .navbar .nav > li > a {
+      padding: 15px 20px;
+    }
+
+    /* Offset the responsive button for proper vertical alignment */
+    .navbar .btn-navbar {
+      margin-top: 10px;
+    }
+
+    /* MARKETING CONTENT
+    -------------------------------------------------- */
+
+    /* Center align the text within the three columns below the carousel */
+    .marketing .span4 {
+      margin-top: 120px;
+      text-align: center;
+      color: #d0d0d0;
+
+    }
+    .marketing h2 {
+      font-weight: normal;
+    }
+    .marketing .span4 p {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+
+    /* Featurettes
+    ------------------------- */
+
+    .container-featurettes {
+      margin-top: 100px;
+      width: 70%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .featurette-divider {
+      margin: 60px 0; /* Space out the Bootstrap <hr> more */
+    }
+    .featurette {
+      padding-top: 60px; /* Vertically center images part 1: add padding above and below text. */
+      overflow: hidden; /* Vertically center images part 2: clear their floats. */
+      background: #213458;
+      text-align: center;
+    }
+    .featurette-image {
+      margin-top: 20px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+    }
+
+    /* Give some space on the sides of the floated elements so text doesn't run right into it. */
+    .featurette-image.pull-left {
+      margin-right: 40px;
+    }
+    .featurette-image.pull-right {
+      margin-left: 40px;
+    }
+
+    /* Thin out the marketing headings */
+    .featurette-heading {
+      font-size: 40px;
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+
+  /*resize lead font*/
+  .lead {
+    font-size:14px;
+  }
+
+
+    /* RESPONSIVE CSS
+    -------------------------------------------------- */
+
+    @media (max-width: 979px) {
+
+      .container.navbar-wrapper {
+        margin-bottom: 0;
+        width: auto;
+      }
+      .navbar-inner {
+        border-radius: 0;
+        margin: -20px 0;
+      }
+
+      .featurette {
+        height: auto;
+        padding: 0;
+      }
+      .featurette-image.pull-left,
+      .featurette-image.pull-right {
+        display: block;
+        float: none;
+        max-width: 40%;
+        margin: 0 auto 20px;
+      }
+    }
+
+
+    @media (max-width: 767px) {
+
+      .navbar-inner {
+        margin: -20px;
+      }
+
+      .featurette-heading {
+        font-size: 30px;
+      }
+      .featurette .lead {
+        font-size: 18px;
+        line-height: 1;
+      }
+      .marketing .span4 + .span4 {
+        margin-top: 40px;
+      }
+    }
+    </style>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="ico/favicon.png">
+  </head>
+
+  <body>
+
+    <!-- NAVBAR
+    ================================================== -->
+    <div class="navbar-wrapper">
+      <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
+      <div class="container">
+        <div class="navbar navbar-inverse">
+          <div class="navbar-inner">
+            <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="index.html"><img src="img/logo_name.png"></a>
+            <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+            <!--<img src="img/harveys-logo-name.jpg"title="Harveys logo" alt="Harveys logo">-->            
+            <div class="nav-collapse collapse">
+              <ul class="nav">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown active">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="dry_suits.html">Dry Suits</a></li>
+                    <li><a href="warm_water_suits.html">Warm Water Suits</a></li>
+                    <li><a href="cold_water_suits.html">Cold Water Suits</a></li>
+                    <li><a href="accessories.html">Accessories</a></li>
+                    <li class="divider"></li>
+                    <li><a href="sizes.html">Sizes</a></li>
+                    <li class="active"><a href="custom.html">Custom Department</a></li>
+                  </ul>
+                </li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="dealer_locator.html">Dealer Locator</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">About<b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="about.html">The Company</a></li>
+                    <li><a href="thermal_protection.html">Thermal Protection</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div><!-- /.navbar-inner -->
+        </div><!-- /.navbar -->
+      </div> <!-- /.container -->
+    </div><!-- /.navbar-wrapper -->
+
+
+    <!-- START THE FEATURETTES -->
+    <div class="container-featurettes">
+
+      <hr class="featurette-divider">
+
+      <div class="featurette">
+        <h2 class="featurette-heading">Custom Department</h2>
+        <form method="get" action="process.php" onsubmit="return FrontPage_Form1_Validator(this)" language="JavaScript" name="FrontPage_Form1">
+          <h2><span class="muted">Customer Information</span></h2>
+          <input TYPE="hidden" NAME="VTI-GROUP" VALUE="0">
+          <p>
+          <p>First Name: &nbsp;<input type="text" name="First_Name" size="30" maxlength="30"><br>
+          Last Name: &nbsp;<input type="text" name="Last_Name" size="30" maxlength="30"><br>
+          Phone/Fax:&nbsp;<input type="text" name="Phone_Fax" size="20"><br>
+          <i>(required for verification on custom suits)</i></p>
+          <p>Measurement:&nbsp;
+          <input type="radio" name="Measurement_Type" value="English">Imperial&nbsp;&nbsp;
+          <input type="radio" name="Measurement_Type" value="Metric">Metric<br>
+          Gender:&nbsp;
+          <input type="radio" name="Gender" value="Male">Male&nbsp;&nbsp;
+          <input type="radio" name="Gender" value="Female">Female<br>
+          Height:&nbsp;<input type="text" name="Height" size="10" maxlength="10"><br>
+          Weight:&nbsp;<input type="text" name="Weight" size="10" maxlength="10"></p>
+          <table border="1" id="table1" width="500" cellspacing="4" cellpadding="6" align="center" style="background-color:#0066cc;">
+            <tr>
+              <td width="300" height="600">
+                <p align="center"><b>Customer Measurements</b></p>
+                <p align="left">&nbsp;<input type="text" name="Ankle" size="10" maxlength="10">&nbsp;Ankle</p>
+                <p align="left">&nbsp;<input type="text" name="Calf" size="10" maxlength="10">&nbsp;Calf</p>
+                <p align="left">&nbsp;<input type="text" name="Below_Knee" size="10" maxlength="10">&nbsp;Below Knee</p>
+                <p align="left">&nbsp;<input type="text" name="Knee" size="10" maxlength="10">&nbsp;Knee</p>
+                <p align="left">&nbsp;<input type="text" name="Thigh_Crotch" size="10" maxlength="10">&nbsp;Thigh at Crotch</p>
+                <p align="left">&nbsp;<input type="text" name="Thigh_5_Below_Crotch" size="10" maxlength="10">&nbsp;Thigh 5 nches Below Crotch</p>
+                <p align="left">&nbsp;<input type="text" name="Hips" size="10" maxlength="10">&nbsp;Hips at Widest Point</p>
+                <p align="left">&nbsp;<input type="text" name="Waist" size="10" maxlength="10">&nbsp;Waist at Navel</p>
+                <p align="left">&nbsp;<input type="text" name="Chest_at_Largest_Point" size="10" maxlength="10">&nbsp;Chest at Largest Point</p>
+                <p align="left">&nbsp;<input type="text" name="Neck" size="10" maxlength="10">&nbsp;Neck</p>
+                <p align="left">&nbsp;<input type="text" name="Wrist" size="10" maxlength="10">&nbsp;Wrist</p>
+                <p align="left">&nbsp;<input type="text" name="Forearm_at_Largest_Point" size="10" maxlength="10">&nbsp;Forearm at Largest Point</p>
+                <p align="left">&nbsp;<input type="text" name="Elbow" size="10" maxlength="10">&nbsp;Elbow</p>
+                <p align="left">&nbsp;<input type="text" name="Bicep" size="10" maxlength="10">&nbsp;Bicep</p>
+                <p align="left">&nbsp;<input type="text" name="Upper_Bicep_at_Shoulder" size="10" maxlength="10">&nbsp;Upper Bicep at Shoulder</p>
+                <p align="left">&nbsp;<input type="text" name="Wrist_to_Elbow" size="10" maxlength="10">&nbsp;Wrist to Elbow</p>
+                <p align="left">&nbsp;<input type="text" name="Wrist_to_Underarm" size="10" maxlength="10">&nbsp;Wrist to Underarm</p>
+                <p align="left">&nbsp;<input type="text" name="Wrist_to_Center_of_Back" size="10" maxlength="10">&nbsp;Wrist to Center of Back</p>
+                <p align="left">&nbsp;<input type="text" name="Shoulder_Seam_to_Waist" size="10" maxlength="10">&nbsp;Shoulder Seam to Waist</p>
+                <p align="left">&nbsp;<input type="text" name="Shoulder_Seam_to_Crotch" size="10" maxlength="10">&nbsp;Shoulder Seam to Crotch</p>
+                <p align="left">&nbsp;<input type="text" name="Ankle_to_Knee" size="10" maxlength="10">&nbsp;Ankle to Knee</p>
+                <p align="left">&nbsp;<input type="text" name="Ankle_to_Crotch" size="10" maxlength="10">&nbsp;Ankle to Crotch</p>
+                <p align="left">&nbsp;<input type="text" name="Crotch_to_Knee" size="10" maxlength="10">&nbsp;Crotch to Knee</p>
+                <p align="left">&nbsp;<input type="text" name="Shoulder_Seam_to_Ankle" size="10" maxlength="10">&nbsp;Shoulder Seam to Ankle<br>&nbsp;</p>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top" width="300">
+                <p align="center"><b>Required Female Measurements</b></p>
+                <p align="left">&nbsp;<input type="text" name="T27" size="10">&nbsp;Shoulder Seam Bust Center</p>
+                <p align="left">&nbsp;<input type="text" name="T28" size="10">&nbsp;Center to Center of Bust</p>
+                <p align="left">&nbsp;<input type="text" name="T29" size="10">&nbsp;Chest above Bust</p>
+                <p align="left">&nbsp;<input type="text" name="T30" size="10">&nbsp;Chest Below Bust</p>
+                <p align="left">&nbsp;<input type="text" name="T31" size="6">&nbsp;Bra Size</p>
+                <p align="left">&nbsp;<input type="text" name="T32" size="6">&nbsp;Cup Size</p>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top" width="300">
+                <p align="center"><b>Hood Measurements</b></p>
+                <p align="left">&nbsp;<input type="text" name="T25" size="10">&nbsp;Forehead to Back of Neck</p>
+                <p align="left">&nbsp;<input type="text" name="T26" size="10">&nbsp;Head Circumference</p>
+                <p align="center"><b>Boot &amp; Glove Measurements</b></p>
+                <p align="left">&nbsp;<input type="text" name="T33" size="10">&nbsp;Shoe Size</p>
+                <p align="left">&nbsp;<input type="text" name="T34" size="10">&nbsp;Glove Size</p>
+              </td>
+            </tr>
+          </table>
+          <p>
+          <input type="submit" value="Submit Measurements" name="Submission_Button">
+          <input type="reset" value="Clear Form" name="Clear_Form"></p>
+        </form>
+      </div>
+
+      <hr class="featurette-divider">
+      <!-- /END THE FEATURETTES -->
+
+      <!-- FOOTER -->
+      <footer>
+        <p>Call Toll-Free 1-800-347-0054 &middot; &copy; 2013 Harvey's Divesuits, All Rights Reserved.</p>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+      </footer>
+    </div><!-- /.container -->
+
+    <!--javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/holder.js"></script>
+    <script Language="JavaScript" Type="text/javascript"><!--
+          function FrontPage_Form1_Validator(theForm)
+          {
+
+            if (theForm.First_Name.value == "")
+            {
+              alert("Please enter a value for the \"First Name\" field.");
+              theForm.First_Name.focus();
+              return (false);
+            }
+
+            if (theForm.First_Name.value.length > 30)
+            {
+              alert("Please enter at most 30 characters in the \"First Name\" field.");
+              theForm.First_Name.focus();
+              return (false);
+            }
+
+            var checkOK = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzƒŠŒŽšœžŸÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿ. \t\r\n\f";
+            var checkStr = theForm.First_Name.value;
+            var allValid = true;
+            var validGroups = true;
+            for (i = 0;  i < checkStr.length;  i++)
+            {
+              ch = checkStr.charAt(i);
+              for (j = 0;  j < checkOK.length;  j++)
+                if (ch == checkOK.charAt(j))
+                  break;
+              if (j == checkOK.length)
+              {
+                allValid = false;
+                break;
+              }
+            }
+            if (!allValid)
+            {
+              alert("Please enter only letter, whitespace and \".\" characters in the \"First Name\" field.");
+              theForm.First_Name.focus();
+              return (false);
+            }
+
+            if (theForm.Last_Name.value == "")
+            {
+              alert("Please enter a value for the \"Last Name\" field.");
+              theForm.Last_Name.focus();
+              return (false);
+            }
+
+            if (theForm.Last_Name.value.length > 30)
+            {
+              alert("Please enter at most 30 characters in the \"Last Name\" field.");
+              theForm.Last_Name.focus();
+              return (false);
+            }
+
+            var checkOK = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzƒŠŒŽšœžŸÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿ0123456789-,. \t\r\n\f";
+            var checkStr = theForm.Last_Name.value;
+            var allValid = true;
+            var validGroups = true;
+            for (i = 0;  i < checkStr.length;  i++)
+            {
+              ch = checkStr.charAt(i);
+              for (j = 0;  j < checkOK.length;  j++)
+                if (ch == checkOK.charAt(j))
+                  break;
+              if (j == checkOK.length)
+              {
+                allValid = false;
+                break;
+              }
+            }
+            if (!allValid)
+            {
+              alert("Please enter only letter, digit, whitespace and \",.\" characters in the \"Last Name\" field.");
+              theForm.Last_Name.focus();
+              return (false);
+            }
+
+            if (theForm.Phone_Fax.value == "")
+            {
+              alert("Please enter a value for the \"Phone or Fax Number\" field.");
+              theForm.Phone_Fax.focus();
+              return (false);
+            }
+
+            var checkOK = "0123456789-()- \t\r\n\f";
+            var checkStr = theForm.Phone_Fax.value;
+            var allValid = true;
+            var validGroups = true;
+            for (i = 0;  i < checkStr.length;  i++)
+            {
+              ch = checkStr.charAt(i);
+              for (j = 0;  j < checkOK.length;  j++)
+                if (ch == checkOK.charAt(j))
+                  break;
+              if (j == checkOK.length)
+              {
+                allValid = false;
+                break;
+              }
+            }
+            if (!allValid)
+            {
+              alert("Please enter only digit, whitespace and \"()-\" characters in the \"Phone or Fax Number\" field.");
+              theForm.Phone_Fax.focus();
+              return (false);
+            }
+
+            if (theForm.Height.value == "")
+            {
+              alert("Please enter a value for the \"Height\" field.");
+              theForm.Height.focus();
+              return (false);
+            }
+
+            if (theForm.Height.value.length > 10)
+            {
+              alert("Please enter at most 10 characters in the \"Height\" field.");
+              theForm.Height.focus();
+              return (false);
+            }
+
+            if (theForm.Weight.value == "")
+            {
+              alert("Please enter a value for the \"Weight\" field.");
+              theForm.Weight.focus();
+              return (false);
+            }
+
+            if (theForm.Weight.value.length > 10)
+            {
+              alert("Please enter at most 10 characters in the \"Weight\" field.");
+              theForm.Weight.focus();
+              return (false);
+            }
+
+            if (theForm.Ankle.value == "")
+            {
+              alert("Please enter a value for the \"Ankle\" field.");
+              theForm.Ankle.focus();
+              return (false);
+            }
+
+            if (theForm.Ankle.value.length > 10)
+            {
+              alert("Please enter at most 10 characters in the \"Ankle\" field.");
+              theForm.Ankle.focus();
+              return (false);
+            }
+
+            if (theForm.Calf.value == "")
+            {
+              alert("Please enter a value for the \"Calf\" field.");
+              theForm.Calf.focus();
+              return (false);
+            }
+
+            if (theForm.Calf.value.length > 10)
+            {
+              alert("Please enter at most 10 characters in the \"Calf\" field.");
+              theForm.Calf.focus();
+              return (false);
+            }
+
+            if (theForm.Below_Knee.value == "")
+            {
+              alert("Please enter a value for the \"Below Knee\" field.");
+              theForm.Below_Knee.focus();
+              return (false);
+            }
+
+            if (theForm.Below_Knee.value.length > 10)
+            {
+              alert("Please enter at most 10 characters in the \"Below Knee\" field.");
+              theForm.Below_Knee.focus();
+              return (false);
+            }
+
+            if (theForm.Knee.value == "")
+            {
+              alert("Please enter a value for the \"Knee\" field.");
+              theForm.Knee.focus();
+              return (false);
+            }
+
+            if (theForm.Knee.value.length > 10)
+            {
+              alert("Please enter at most 10 characters in the \"Knee\" field.");
+              theForm.Knee.focus();
+              return (false);
+            }
+
+            if (theForm.Thigh_Crotch.value == "")
+            {
+              alert("Please enter a value for the \"Thigh at Crotch\" field.");
+              theForm.Thigh_Crotch.focus();
+              return (false);
+            }
+
+            if (theForm.Thigh_Crotch.value.length > 10)
+            {
+              alert("Please enter at most 10 characters in the \"Thigh at Crotch\" field.");
+              theForm.Thigh_Crotch.focus();
+              return (false);
+            }
+
+            if (theForm.Thigh_5_Below_Crotch.value == "")
+            {
+              alert("Please enter a value for the \"Thigh 5 Inches Below Crotch\" field.");
+              theForm.Thigh_5_Below_Crotch.focus();
+              return (false);
+            }
+
+            if (theForm.Thigh_5_Below_Crotch.value.length > 10)
+            {
+              alert("Please enter at most 10 characters in the \"Thigh 5 Inches Below Crotch\" field.");
+              theForm.Thigh_5_Below_Crotch.focus();
+              return (false);
+            }
+
+            if (theForm.Hips.value == "")
+            {
+              alert("Please enter a value for the \"Hips\" field.");
+              theForm.Hips.focus();
+              return (false);
+            }
+
+            if (theForm.Hips.value.length > 10)
+            {
+              alert("Please enter at most 10 characters in the \"Hips\" field.");
+              theForm.Hips.focus();
+              return (false);
+            }
+
+            if (theForm.Waist.value == "")
+            {
+              alert("Please enter a value for the \"Waist\" field.");
+              theForm.Waist.focus();
+              return (false);
+            }
+
+            if (theForm.Waist.value.length > 10)
+            {
+              alert("Please enter at most 10 characters in the \"Waist\" field.");
+              theForm.Waist.focus();
+              return (false);
+            }
+
+            if (theForm.Chest_at_Largest_Point.value == "")
+            {
+              alert("Please enter a value for the \"Chest at Largest Point\" field.");
+              theForm.Chest_at_Largest_Point.focus();
+              return (false);
+            }
+
+            if (theForm.Chest_at_Largest_Point.value.length > 10)
+            {
+              alert("Please enter at most 10 characters in the \"Chest at Largest Point\" field.");
+              theForm.Chest_at_Largest_Point.focus();
+              return (false);
+            }
+
+            if (theForm.Neck.value == "")
+            {
+              alert("Please enter a value for the \"Neck\" field.");
+              theForm.Neck.focus();
+              return (false);
+            }
+
+            if (theForm.Neck.value.length > 10)
+            {
+              alert("Please enter at most 10 characters in the \"Neck\" field.");
+              theForm.Neck.focus();
+              return (false);
+            }
+
+            if (theForm.Wrist.value == "")
+            {
+              alert("Please enter a value for the \"Wrist\" field.");
+              theForm.Wrist.focus();
+              return (false);
+            }
+
+            if (theForm.Wrist.value.length > 10)
+            {
+              alert("Please enter at most 10 characters in the \"Wrist\" field.");
+              theForm.Wrist.focus();
+              return (false);
+            }
+
+            if (theForm.Forearm_at_Largest_Point.value == "")
+            {
+              alert("Please enter a value for the \"Forearm at Largest Point\" field.");
+              theForm.Forearm_at_Largest_Point.focus();
+              return (false);
+            }
+
+            if (theForm.Forearm_at_Largest_Point.value.length > 10)
+            {
+              alert("Please enter at most 10 characters in the \"Forearm at Largest Point\" field.");
+              theForm.Forearm_at_Largest_Point.focus();
+              return (false);
+            }
+
+            if (theForm.Elbow.value == "")
+            {
+              alert("Please enter a value for the \"Elbow\" field.");
+              theForm.Elbow.focus();
+              return (false);
+            }
+
+            if (theForm.Elbow.value.length > 10)
+            {
+              alert("Please enter at most 10 characters in the \"Elbow\" field.");
+              theForm.Elbow.focus();
+              return (false);
+            }
+
+            if (theForm.Bicep.value == "")
+            {
+              alert("Please enter a value for the \"Bicep\" field.");
+              theForm.Bicep.focus();
+              return (false);
+            }
+
+            if (theForm.Bicep.value.length > 10)
+            {
+              alert("Please enter at most 10 characters in the \"Bicep\" field.");
+              theForm.Bicep.focus();
+              return (false);
+            }
+
+            if (theForm.Upper_Bicep_at_Shoulder.value == "")
+            {
+              alert("Please enter a value for the \"Upper Bicep at Shoulder\" field.");
+              theForm.Upper_Bicep_at_Shoulder.focus();
+              return (false);
+            }
+
+            if (theForm.Upper_Bicep_at_Shoulder.value.length > 10)
+            {
+              alert("Please enter at most 10 characters in the \"Upper Bicep at Shoulder\" field.");
+              theForm.Upper_Bicep_at_Shoulder.focus();
+              return (false);
+            }
+
+            if (theForm.Wrist_to_Elbow.value == "")
+            {
+              alert("Please enter a value for the \"Wrist to Elbow\" field.");
+              theForm.Wrist_to_Elbow.focus();
+              return (false);
+            }
+
+            if (theForm.Wrist_to_Elbow.value.length > 10)
+            {
+              alert("Please enter at most 10 characters in the \"Wrist to Elbow\" field.");
+              theForm.Wrist_to_Elbow.focus();
+              return (false);
+            }
+
+            if (theForm.Wrist_to_Underarm.value == "")
+            {
+              alert("Please enter a value for the \"Wrist to Underarm\" field.");
+              theForm.Wrist_to_Underarm.focus();
+              return (false);
+            }
+
+            if (theForm.Wrist_to_Underarm.value.length > 10)
+            {
+              alert("Please enter at most 10 characters in the \"Wrist to Underarm\" field.");
+              theForm.Wrist_to_Underarm.focus();
+              return (false);
+            }
+
+            if (theForm.Wrist_to_Center_of_Back.value == "")
+            {
+              alert("Please enter a value for the \"Wrist to Center of Back\" field.");
+              theForm.Wrist_to_Center_of_Back.focus();
+              return (false);
+            }
+
+            if (theForm.Wrist_to_Center_of_Back.value.length > 10)
+            {
+              alert("Please enter at most 10 characters in the \"Wrist to Center of Back\" field.");
+              theForm.Wrist_to_Center_of_Back.focus();
+              return (false);
+            }
+
+            if (theForm.Shoulder_Seam_to_Waist.value == "")
+            {
+              alert("Please enter a value for the \"Shoulder Seam to Waist\" field.");
+              theForm.Shoulder_Seam_to_Waist.focus();
+              return (false);
+            }
+
+            if (theForm.Shoulder_Seam_to_Waist.value.length > 10)
+            {
+              alert("Please enter at most 10 characters in the \"Shoulder Seam to Waist\" field.");
+              theForm.Shoulder_Seam_to_Waist.focus();
+              return (false);
+            }
+
+            if (theForm.Shoulder_Seam_to_Crotch.value == "")
+            {
+              alert("Please enter a value for the \"Shoulder Seam to Crotch\" field.");
+              theForm.Shoulder_Seam_to_Crotch.focus();
+              return (false);
+            }
+
+            if (theForm.Shoulder_Seam_to_Crotch.value.length > 10)
+            {
+              alert("Please enter at most 10 characters in the \"Shoulder Seam to Crotch\" field.");
+              theForm.Shoulder_Seam_to_Crotch.focus();
+              return (false);
+            }
+
+            if (theForm.Ankle_to_Knee.value == "")
+            {
+              alert("Please enter a value for the \"Ankle to Knee\" field.");
+              theForm.Ankle_to_Knee.focus();
+              return (false);
+            }
+
+            if (theForm.Ankle_to_Knee.value.length > 10)
+            {
+              alert("Please enter at most 10 characters in the \"Ankle to Knee\" field.");
+              theForm.Ankle_to_Knee.focus();
+              return (false);
+            }
+
+            if (theForm.Ankle_to_Crotch.value == "")
+            {
+              alert("Please enter a value for the \"Ankle to Crotch\" field.");
+              theForm.Ankle_to_Crotch.focus();
+              return (false);
+            }
+
+            if (theForm.Ankle_to_Crotch.value.length > 10)
+            {
+              alert("Please enter at most 10 characters in the \"Ankle to Crotch\" field.");
+              theForm.Ankle_to_Crotch.focus();
+              return (false);
+            }
+
+            if (theForm.Crotch_to_Knee.value == "")
+            {
+              alert("Please enter a value for the \"Crotch to Knee\" field.");
+              theForm.Crotch_to_Knee.focus();
+              return (false);
+            }
+
+            if (theForm.Crotch_to_Knee.value.length > 10)
+            {
+              alert("Please enter at most 10 characters in the \"Crotch to Knee\" field.");
+              theForm.Crotch_to_Knee.focus();
+              return (false);
+            }
+
+            if (theForm.Shoulder_Seam_to_Ankle.value == "")
+            {
+              alert("Please enter a value for the \"Shoulder Seam to Ankle\" field.");
+              theForm.Shoulder_Seam_to_Ankle.focus();
+              return (false);
+            }
+
+            if (theForm.Shoulder_Seam_to_Ankle.value.length > 10)
+            {
+              alert("Please enter at most 10 characters in the \"Shoulder Seam to Ankle\" field.");
+              theForm.Shoulder_Seam_to_Ankle.focus();
+              return (false);
+            }
+            return (true);
+          }
+          //--></script>
+
+  </body>
+</html>

@@ -19,8 +19,8 @@ if(isset($_POST['Email'])) {
     if(!isset($_POST['First_Name']) ||
         !isset($_POST['Last_Name']) ||
         !isset($_POST['Email']) ||
-        !isset($_POST['Phone_Faxz']) ||
-        !isset($_POST['comments'])) {
+        !isset($_POST['Phone_Fax']))
+         {
         died('We are sorry, but there appears to be a problem with the form you submitted.');       
     }
      

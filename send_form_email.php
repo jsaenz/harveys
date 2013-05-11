@@ -20,7 +20,7 @@ if(isset($_POST['email'])) {
         !isset($_POST['Last_Name']) ||
         !isset($_POST['Phone_Fax']) ||
         !isset($_POST['Measurement_Type']) ||
-        !isset($_POST['Height'])
+        !isset($_POST['Height'])  ||
         !isset($_POST['Weight']) || 
         !isset($_POST['Ankle']) ||
         !isset($_POST['Calf']) ||

@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Untitled Document</title>
+        <script type="text/javascript">
+            function show(str){
+                document.getElementById('sh2').style.display = 'none';
+                document.getElementById('sh1').style.display = 'block';
+            }
+            function show2(sign){
+                document.getElementById('sh2').style.display = 'block';
+                document.getElementById('sh1').style.display = 'none';
+            }
+        </script>
+    </head>
+
+    <body>
+        <p>
+            <input type="radio" name="r1" id="e1" onchange="show2()"/>&nbsp;I Am New User&nbsp;&nbsp;&nbsp;
+            <input type="radio" checked="checked" name="r1" onchange="show(this.value)"/>&nbsp;Existing Member
+        </p>
+        <div id="sh1">Hello There !!</div>
+        <p>&nbsp;</p>
+        <div id="sh2" style="display:none;">Hey Watz up !!</div>
+    </body>
+</html>

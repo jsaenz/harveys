@@ -258,11 +258,12 @@
 
       <div class="featurette">
         <h2 class="featurette-heading">Custom Department</h2>
-        <form method="post" action="process.php" onsubmit="return FrontPage_Form1_Validator(this)" language="JavaScript" name="FrontPage_Form1">
+        <form method="post" action="send_form_email.php" onsubmit="return FrontPage_Form1_Validator(this)" language="JavaScript" name="FrontPage_Form1">
           <h2><span class="muted">Customer Information</span></h2>
           <p>
           <p>First Name: &nbsp;<input type="text" name="First_Name" size="30" maxlength="30"><br>
           Last Name: &nbsp;<input type="text" name="Last_Name" size="30" maxlength="30"><br>
+          Email: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="Email" size="30" maxlength="30"><br>
           Phone/Fax:&nbsp;<input type="text" name="Phone_Fax" size="20"><br>
           <i>(required for verification on custom suits)</i></p>
           <p>Measurement:&nbsp;
@@ -426,6 +427,30 @@
         {
           alert("Please enter only letter, digit, whitespace and \",.\" characters in the \"Last Name\" field.");
           theForm.Last_Name.focus();
+          return (false);
+        }
+
+        if (theForm.Email.value == "")
+        {
+          alert("Please enter a value for the \"Email\" field.");
+          theForm.Email.focus();
+          return (false);
+        }
+
+        if (theForm.Email.value.length > 30)
+        {
+          alert("Please enter at most 30 characters in the \"Email\" field.");
+          theForm.Email.focus();
+          return (false);
+        }
+
+        email = theForm.Email;
+        filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        if (filter.test(email.value)) {
+        }
+        else {
+          alert("Please enter a proper email in the \"Email\" field.");
+          theForm.Email.focus();
           return (false);
         }
 

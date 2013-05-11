@@ -16,18 +16,54 @@ if(isset($_POST['email'])) {
     }
      
     // validation expected data exists
-    if(!isset($_POST['first_name']) ||
-        !isset($_POST['last_name']) ||
-        !isset($_POST['email']) ||
-        !isset($_POST['telephone']) ||
-        !isset($_POST['comments'])) {
+    if(!isset($_POST['First_Name']) ||
+        !isset($_POST['Last_Name']) ||
+        !isset($_POST['Phone_Fax']) ||
+        !isset($_POST['Measurement_Type']) ||
+        !isset($_POST['Height'])
+        !isset($_POST['Weight']) || 
+        !isset($_POST['Ankle']) ||
+        !isset($_POST['Calf']) ||
+        !isset($_POST['Below_Knee']) ||
+        !isset($_POST['Knee']) ||
+        !isset($_POST['Thigh_Crotch']) ||
+        !isset($_POST['Thigh_5_Below_Crotch']) ||
+        !isset($_POST['Hips']) ||
+        !isset($_POST['Waist']) ||
+        !isset($_POST['Chest_at_Largest_Point']) ||
+        !isset($_POST['Elbow']) ||
+        !isset($_POST['Bicep']) ||
+        !isset($_POST['Upper_Bicep_at_Shoulder']) ||
+        !isset($_POST['Wrist_to_Elbow']) ||
+        !isset($_POST['Wrist_to_Underarm']) ||
+        !isset($_POST['Wrist_to_Center_of_Back']) ||
+        !isset($_POST['Shoulder_Seam_to_Waist']) ||
+        !isset($_POST['Shoulder_Seam_to_Crotch']) ||
+        !isset($_POST['Ankle_to_Knee']) ||
+        !isset($_POST['Ankle_to_Crotch']) ||
+        !isset($_POST['Crotch_to_Knee']) ||
+        !isset($_POST['Shoulder_Seam_to_Ankle']) ||
+        !isset($_POST['Shoulder_Seam_Bust_Center']) ||
+        !isset($_POST['Center_to_Center_of_Bust']) ||
+        !isset($_POST['Chest_Above_Bust']) ||
+        !isset($_POST['Chest_Below_Bust']) ||
+        !isset($_POST['Bra_Size']) ||
+        !isset($_POST['Cup_Size']) ||
+        !isset($_POST['Forehead_to_Back_of_Neck']) ||
+        !isset($_POST['Head_Circumference']) ||
+        !isset($_POST['Shoe_Size']) ||
+        !isset($_POST['Glove_Size']) ||
+        !isset($_POST['']) ||
+        !isset($_POST['']) ||
+
+        ) {
         died('We are sorry, but there appears to be a problem with the form you submitted.');       
     }
      
-    $first_name = $_POST['first_name']; // required
-    $last_name = $_POST['last_name']; // required
-    $email_from = $_POST['email']; // required
-    $telephone = $_POST['telephone']; // not required
+    $First_Name = $_POST['First_Name']; // required
+    $Last_Name = $_POST['Last_Name']; // required
+    $email_from = $_POST['Email']; // required
+    $Phone_Fax = $_POST['Phone_Fax']; // not required
     $comments = $_POST['comments']; // required
      
     $error_message = "";
@@ -36,10 +72,10 @@ if(isset($_POST['email'])) {
     $error_message .= 'The Email Address you entered does not appear to be valid.<br />';
   }
     $string_exp = "/^[A-Za-z .'-]+$/";
-  if(!preg_match($string_exp,$first_name)) {
+  if(!preg_match($string_exp,$First_Name)) {
     $error_message .= 'The First Name you entered does not appear to be valid.<br />';
   }
-  if(!preg_match($string_exp,$last_name)) {
+  if(!preg_match($string_exp,$Last_Name)) {
     $error_message .= 'The Last Name you entered does not appear to be valid.<br />';
   }
   if(strlen($comments) < 2) {
@@ -55,10 +91,10 @@ if(isset($_POST['email'])) {
       return str_replace($bad,"",$string);
     }
      
-    $email_message .= "First Name: ".clean_string($first_name)."\n";
-    $email_message .= "Last Name: ".clean_string($last_name)."\n";
+    $email_message .= "First Name: ".clean_string($First_Name)."\n";
+    $email_message .= "Last Name: ".clean_string($Last_Name)."\n";
     $email_message .= "Email: ".clean_string($email_from)."\n";
-    $email_message .= "Telephone: ".clean_string($telephone)."\n";
+    $email_message .= "Phone_Fax: ".clean_string($Phone_Fax)."\n";
     $email_message .= "Comments: ".clean_string($comments)."\n";
      
      

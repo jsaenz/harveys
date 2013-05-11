@@ -2,8 +2,8 @@
 <body>
 
 Welcome 
-<?php echo $_GET["First_Name"]; ?>
-&nbsp; <?php echo $_GET["Last_Name"]; ?><br>
-Phone:&nbsp;<?php echo $_GET["Phone_Fax"]; ?><br>
+<?php echo $_POST["First_Name"]; ?>
+&nbsp; <?php echo $_POST["Last_Name"]; ?><br>
+Phone:&nbsp;<?php echo $_POST["Phone_Fax"]; ?><br>
 </body>
 </html>

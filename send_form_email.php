@@ -15,23 +15,15 @@ if(isset($_POST['Email'])) {
         die();
     }
      
-    $First_Name = $_POST['First_Name']; // required
-    $Last_Name = $_POST['Last_Name']; // required
-    $email_from = $_POST['Email']; // required
-    $Phone_Fax = $_POST['Phone_Fax']; // not required
-    $comments = $_POST['comments']; // required
+    $First_Name = $_POST['First_Name'];
+    $Last_Name = $_POST['Last_Name'];
+    $email_from = $_POST['Email'];
+    $Phone_Fax = $_POST['Phone_Fax'];
+    $comments = $_POST['comments']; 
      
-    $error_message = "";
     $email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
   if(!preg_match($email_exp,$email_from)) {
-    $error_message .= 'The Email Address you entered does not appear to be valid.<br />';
-  }
-    $string_exp = "/^[A-Za-z .'-]+$/";
-  if(!preg_match($string_exp,$First_Name)) {
-    $error_message .= 'The First Name you entered does not appear to be valid.<br />';
-  }
-  if(!preg_match($string_exp,$Last_Name)) {
-    $error_message .= 'The Last Name you entered does not appear to be valid.<br />';
+    $error_message = 'The Email Address you entered does not appear to be valid.<br />';
   }
   if(strlen($error_message) > 0) {
     died($error_message);
@@ -47,7 +39,6 @@ if(isset($_POST['Email'])) {
     $email_message .= "Last Name: ".clean_string($Last_Name)."\n";
     $email_message .= "Email: ".clean_string($email_from)."\n";
     $email_message .= "Phone_Fax: ".clean_string($Phone_Fax)."\n";
-    $email_message .= "Comments: ".clean_string($comments)."\n";
      
      
 // create email headers
@@ -57,7 +48,7 @@ $headers = 'From: '.$email_from."\r\n".
 @mail($email_to, $email_subject, $email_message, $headers);  
 ?>
  
-<!-- include your own success html here -->
+<!-- include success html here -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -251,10 +242,10 @@ $headers = 'From: '.$email_from."\r\n".
       letter-spacing: -1px;
     }
 
-  /*resize lead font*/
-  .lead {
-    font-size:14px;
-  }
+    /*resize lead font*/
+    .lead {
+      font-size:14px;
+    }
 
 
     /* RESPONSIVE CSS

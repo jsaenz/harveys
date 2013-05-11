@@ -1,9 +1,9 @@
 <?php
-if(isset($_POST['Email'])) {
+if(isset($_POST['email'])) {
      
     // EDIT THE 2 LINES BELOW AS REQUIRED
-    $Email_to = "you@yourdomain.com";
-    $Email_subject = "Your Email subject line";
+    $email_to = "saenzrugby@gmail.com";
+    $email_subject = "test email";
      
      
     function died($error) {
@@ -18,21 +18,47 @@ if(isset($_POST['Email'])) {
     // validation expected data exists
     if(!isset($_POST['First_Name']) ||
         !isset($_POST['Last_Name']) ||
-        !isset($_POST['Email']) ||
-        !isset($_POST['Phone_Fax']))
-         {
+        !isset($_POST['Phone_Fax']) ||
+        !isset($_POST['Measurement_Type']) ||
+        !isset($_POST['Height'])  ||
+        !isset($_POST['Weight']) || 
+        !isset($_POST['Ankle']) ||
+        !isset($_POST['Calf']) ||
+        !isset($_POST['Below_Knee']) ||
+        !isset($_POST['Knee']) ||
+        !isset($_POST['Thigh_Crotch']) ||
+        !isset($_POST['Thigh_5_Below_Crotch']) ||
+        !isset($_POST['Hips']) ||
+        !isset($_POST['Waist']) ||
+        !isset($_POST['Chest_at_Largest_Point']) ||
+        !isset($_POST['Elbow']) ||
+        !isset($_POST['Bicep']) ||
+        !isset($_POST['Upper_Bicep_at_Shoulder']) ||
+        !isset($_POST['Wrist_to_Elbow']) ||
+        !isset($_POST['Wrist_to_Underarm']) ||
+        !isset($_POST['Wrist_to_Center_of_Back']) ||
+        !isset($_POST['Shoulder_Seam_to_Waist']) ||
+        !isset($_POST['Shoulder_Seam_to_Crotch']) ||
+        !isset($_POST['Ankle_to_Knee']) ||
+        !isset($_POST['Ankle_to_Crotch']) ||
+        !isset($_POST['Crotch_to_Knee']) ||
+        !isset($_POST['Forehead_to_Back_of_Neck']) ||
+        !isset($_POST['Head_Circumference']) ||
+        !isset($_POST['Shoe_Size']) ||
+        !isset($_POST['Glove_Size']))
+       {
         died('We are sorry, but there appears to be a problem with the form you submitted.');       
     }
      
     $First_Name = $_POST['First_Name']; // required
     $Last_Name = $_POST['Last_Name']; // required
-    $Email_from = $_POST['Email']; // required
+    $email_from = $_POST['Email']; // required
     $Phone_Fax = $_POST['Phone_Fax']; // not required
     $comments = $_POST['comments']; // required
      
     $error_message = "";
-    $Email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
-  if(!preg_match($Email_exp,$Email_from)) {
+    $email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
+  if(!preg_match($email_exp,$email_from)) {
     $error_message .= 'The Email Address you entered does not appear to be valid.<br />';
   }
     $string_exp = "/^[A-Za-z .'-]+$/";
@@ -45,29 +71,29 @@ if(isset($_POST['Email'])) {
   if(strlen($error_message) > 0) {
     died($error_message);
   }
-    $Email_message = "Form details below.\n\n";
+    $email_message = "Form details below.\n\n";
      
     function clean_string($string) {
       $bad = array("content-type","bcc:","to:","cc:","href");
       return str_replace($bad,"",$string);
     }
      
-    $Email_message .= "First Name: ".clean_string($First_Name)."\n";
-    $Email_message .= "Last Name: ".clean_string($Last_Name)."\n";
-    $Email_message .= "Email: ".clean_string($Email_from)."\n";
-    $Email_message .= "Phone_Fax: ".clean_string($Phone_Fax)."\n";
-    $Email_message .= "Comments: ".clean_string($comments)."\n";
+    $email_message .= "First Name: ".clean_string($First_Name)."\n";
+    $email_message .= "Last Name: ".clean_string($Last_Name)."\n";
+    $email_message .= "Email: ".clean_string($email_from)."\n";
+    $email_message .= "Phone_Fax: ".clean_string($Phone_Fax)."\n";
+    $email_message .= "Comments: ".clean_string($comments)."\n";
      
      
-// create Email headers
-$headers = 'From: '.$Email_from."\r\n".
-'Reply-To: '.$Email_from."\r\n" .
+// create email headers
+$headers = 'From: '.$email_from."\r\n".
+'Reply-To: '.$email_from."\r\n" .
 'X-Mailer: PHP/' . phpversion();
-@mail($Email_to, $Email_subject, $Email_message, $headers);  
+@mail($email_to, $email_subject, $email_message, $headers);  
 ?>
  
 <!-- include your own success html here -->
- 
+
 Thank you for contacting us. We will be in touch with you very soon.
  
 <?php

@@ -212,6 +212,50 @@ $headers = 'From: '.$email_from."\r\n".
       margin-right: 10px;
     }
 
+ /* Featurettes
+    ------------------------- */
+
+    .container-featurettes {
+      margin-top: 100px;
+      width: 70%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .featurette-divider {
+      margin: 60px 0; /* Space out the Bootstrap <hr> more */
+    }
+    .featurette {
+      padding-top: 60px; /* Vertically center images part 1: add padding above and below text. */
+      overflow: hidden; /* Vertically center images part 2: clear their floats. */
+      background: #213458;
+      text-align: center;
+    }
+    .featurette-image {
+      margin-top: 20px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+    }
+
+    /* Give some space on the sides of the floated elements so text doesn't run right into it. */
+    .featurette-image.pull-left {
+      margin-right: 40px;
+    }
+    .featurette-image.pull-right {
+      margin-left: 40px;
+    }
+
+    /* Thin out the marketing headings */
+    .featurette-heading {
+      font-size: 40px;
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+
+  /*resize lead font*/
+  .lead {
+    font-size:14px;
+  }
+
 
     /* RESPONSIVE CSS
     -------------------------------------------------- */
@@ -227,12 +271,16 @@ $headers = 'From: '.$email_from."\r\n".
         margin: -20px 0;
       }
 
-      .carousel .item {
-        height: 500px;
+      .featurette {
+        height: auto;
+        padding: 0;
       }
-      .carousel img {
-        width: auto;
-        height: 500px;
+      .featurette-image.pull-left,
+      .featurette-image.pull-right {
+        display: block;
+        float: none;
+        max-width: 40%;
+        margin: 0 auto 20px;
       }
     }
 
@@ -243,32 +291,13 @@ $headers = 'From: '.$email_from."\r\n".
         margin: -20px;
       }
 
-      .carousel {
-        margin-left: -20px;
-        margin-right: -20px;
-      }
-      .carousel .container {
-
-      }
-      .carousel .item {
-        height: 300px;
-      }
-      .carousel img {
-        height: 300px;
-      }
-      .carousel-caption {
-        width: 65%;
-        padding: 0 70px;
-        margin-top: 100px;
-      }
-      .carousel-caption h1 {
+      .featurette-heading {
         font-size: 30px;
       }
-      .carousel-caption .lead,
-      .carousel-caption .btn {
+      .featurette .lead {
         font-size: 18px;
+        line-height: 1;
       }
-
       .marketing .span4 + .span4 {
         margin-top: 40px;
       }
@@ -337,7 +366,10 @@ $headers = 'From: '.$email_from."\r\n".
       </div> <!-- /.container -->
     </div><!-- /.navbar-wrapper -->
 
-    <div>
+    <!-- START THE FEATURETTES -->
+    <div class="container-featurettes">
+
+      <hr class="featurette-divider">
       Thank you for contacting us. We will be in touch with you very soon.
     </div>
  

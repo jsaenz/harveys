@@ -370,7 +370,8 @@ $headers = 'From: '.$email_from."\r\n".
     <div class="container-featurettes">
 
       <hr class="featurette-divider">
-      Thank you for contacting us. We will be in touch with you very soon.
+      <div class="featurette" >
+        Thank you for contacting us. We will be in touch with you very soon.
     </div>
     <!-- /END THE FEATURETTES -->
 

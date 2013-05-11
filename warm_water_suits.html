@@ -4,10 +4,8 @@
     <meta charset="utf-8">
     <title>Harvey's Skin Diving Supply, Inc.</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Home Page">
-    <meta name="author" content="Jonathan Saenz">
-    <meta name="keywords" content="Dry Suit, Wet Suit, SCUBA, Diving, Surfing, Kayaking, Kite Surfing, Water Skiing, Water, Puget Sound, Orca">
-
+    <meta name="description" content="">
+    <meta name="author" content="">
 
     <!-- styles -->
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -78,79 +76,48 @@
     }
 
 
+    /* Featurettes
+    ------------------------- */
 
-    /* CUSTOMIZE THE CAROUSEL
-    -------------------------------------------------- */
-
-    /* Carousel base class */
-    .carousel {
-      margin-bottom: 60px;
-      max-width: 1650px;
+    .container-featurettes {
+      margin-top: 100px;
+      width: 70%;
       margin-left: auto;
       margin-right: auto;
     }
 
-    .carousel .container {
-      position: relative;
-      z-index: 9;
+    .featurette-divider {
+      margin: 60px 0; /* Space out the Bootstrap <hr> more */
+    }
+    .featurette {
+      padding-top: 60px; /* Vertically center images part 1: add padding above and below text. */
+      overflow: hidden; /* Vertically center images part 2: clear their floats. */
+      background: #213458;
+    }
+    .featurette-image {
+      margin-top: 20px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
     }
 
-    .carousel-control {
-      height: 80px;
-      margin-top: 0;
-      font-size: 120px;
-      text-shadow: 0 1px 1px rgba(0,0,0,.4);
-      background-color: transparent;
-      border: 0;
-      z-index: 10;
+    /* Give some space on the sides of the floated elements so text doesn't run right into it. */
+    .featurette-image.pull-left {
+      margin-right: 40px;
+    }
+    .featurette-image.pull-right {
+      margin-left: 40px;
     }
 
-    .carousel .item {
-      height: 500px;
-    }
-    .carousel img {
-      position: absolute;
-      top: 0;
-      right: 0;
-      height: 500px;
+    /* Thin out the marketing headings */
+    .featurette-heading {
+      font-size: 40px;
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -1px;
     }
 
-    .carousel-caption {
-      background-color: transparent;
-      position: static;
-      max-width: 550px;
-      padding: 0 20px;
-      margin-top: 200px;
-    }
-    .carousel-caption h1,
-    .carousel-caption .lead {
-      margin: 0;
-      line-height: 1.25;
-      color: #d0d0d0;
-      text-shadow: 0 1px 1px rgba(0,0,0,.4);
-    }
-    .carousel-caption .btn {
-      margin-top: 10px;
-    }
-
-
-
-    /* MARKETING CONTENT
-    -------------------------------------------------- */
-
-    /* Center align the text within the three columns below the carousel */
-    .marketing .span4 {
-      text-align: center;
-      color: #d0d0d0;
-
-    }
-    .marketing h2 {
-      font-weight: normal;
-    }
-    .marketing .span4 p {
-      margin-left: 10px;
-      margin-right: 10px;
-    }
+  /*resize lead font*/
+  .lead {
+    font-size:14px;
+  }
 
 
     /* RESPONSIVE CSS
@@ -167,12 +134,16 @@
         margin: -20px 0;
       }
 
-      .carousel .item {
-        height: 500px;
+      .featurette {
+        height: auto;
+        padding: 0;
       }
-      .carousel img {
-        width: auto;
-        height: 500px;
+      .featurette-image.pull-left,
+      .featurette-image.pull-right {
+        display: block;
+        float: none;
+        max-width: 40%;
+        margin: 0 auto 20px;
       }
     }
 
@@ -183,34 +154,12 @@
         margin: -20px;
       }
 
-      .carousel {
-        margin-left: -20px;
-        margin-right: -20px;
-      }
-      .carousel .container {
-
-      }
-      .carousel .item {
-        height: 300px;
-      }
-      .carousel img {
-        height: 300px;
-      }
-      .carousel-caption {
-        width: 65%;
-        padding: 0 70px;
-        margin-top: 100px;
-      }
-      .carousel-caption h1 {
+      .featurette-heading {
         font-size: 30px;
       }
-      .carousel-caption .lead,
-      .carousel-caption .btn {
+      .featurette .lead {
         font-size: 18px;
-      }
-
-      .marketing .span4 + .span4 {
-        margin-top: 40px;
+        line-height: 1;
       }
     }
     </style>
@@ -227,8 +176,6 @@
   </head>
 
   <body>
-
-
 
     <!-- NAVBAR
     ================================================== -->
@@ -248,12 +195,12 @@
             <!--<img src="img/harveys-logo-name.jpg"title="Harveys logo" alt="Harveys logo">-->            
             <div class="nav-collapse collapse">
               <ul class="nav">
-                <li class="active"><a href="index.html">Home</a></li>
-                <li class="dropdown">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdow active">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
                   <ul class="dropdown-menu">
                     <li><a href="dry_suits.html">Dry Suits</a></li>
-                    <li><a href="warm_water_suits.html">Warm Water Suits</a></li>
+                    <li class="active"><a href="warm_water_suits.html">Warm Water Suits</a></li>
                     <li><a href="cold_water_suits.html">Cold Water Suits</a></li>
                     <li><a href="accessories.html">Accessories</a></li>
                     <li class="divider"></li>
@@ -278,102 +225,30 @@
     </div><!-- /.navbar-wrapper -->
 
 
+    <!-- START THE FEATURETTES -->
+    <div class="container-featurettes">
 
-    <!-- Carousel
-    ================================================== -->
-    <div id="myCarousel" class="carousel slide">
-      <div class="carousel-inner">
-        <div class="item active">
-          <img src="img/reef.jpg" alt="">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Our company History</h1>
-              <p class="lead">Learn more about the rich history of our company.</p>
-              <p><a class="btn" href="about.html">View details &raquo;</a></p>
-              <!--<a class="btn btn-large btn-primary" href="#">Sign up today</a>-->
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <img src="img/jack_crevalle.jpg" alt="">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Free Shipping</h1>
-              <p class="lead">Free Shipping is available to your Local Authorized Harvey's Dealer.</p>
-              <p><a class="btn" href="dealer_locator.html">Find a Dealer &raquo;</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <img src="img/eagle_ray.jpg" alt="">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Connect with us!</h1>
-              <iframe
-                src="https://www.facebook.com/plugins/like.php? 
-                href=https://www.facebook.com/pages/Harveys-Skin-Diving-Suits/168038769879704"
-                scrolling="no" frameborder="0" style="border:none; width:450px; height:80px">
-              </iframe>
-            </div>
-          </div>
-        </div>
+      <hr class="featurette-divider">
+
+      <div class="featurette" >
+        <h2 class="featurette-heading">Coming Soon!<br></h2>
       </div>
-      <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-      <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
-    </div><!-- /.carousel -->
 
-
-
-    <!-- Marketing messaging and featurettes
-    ================================================== -->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
-
-    <div class="container marketing">
-
-      <!-- Three columns of text below the carousel -->
-      <div class="row">
-        <div class="span4">
-          <img class="img-circle" data-src="holder.js/140x140" src="img/USA_Flag.jpg">
-          <h2>Made in the U.S.A.</h2>
-          <p>100% Of Harvey's Suits &amp; 90% of our entire line of neoprene products are fabricated, assembled, glued &amp; sewn right here @ our facility in Kent, Washington.</p>
-        </div><!-- /.span4 -->
-        <div class="span4">
-          <img class="img-circle" data-src="holder.js/140x140" src="img/tflex_191_circle.jpg">
-          <h2>TFlex 191 </h2>
-          <p>Take a look at our new TFlex 191 Wetsuit.</p>
-          <p><a class="btn" href="warm_water_suits.html">View details &raquo;</a></p>
-        </div><!-- /.span4 -->
-        <div class="span4">
-          <img class="img-circle" data-src="holder.js/140x140" src="img/thermometer_circle.jpg">
-          <h2>Thermal Protection</h2>
-          <p>What you need to know about thermal protection before your next dive.</p>
-          <p><a class="btn" href="thermal_protection.html">View details &raquo;</a></p>
-        </div><!-- /.span4 -->
-      </div><!-- /.row -->
+      <hr class="featurette-divider">
+      <!-- /END THE FEATURETTES -->
 
       <!-- FOOTER -->
       <footer>
         <p>Call Toll-Free 1-800-347-0054 &middot; &copy; 2013 Harvey's Divesuits, All Rights Reserved.</p>
         <p class="pull-right"><a href="#">Back to top</a></p>
       </footer>
-
     </div><!-- /.container -->
-
-
 
     <!--javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script>
-      !function ($) {
-        $(function(){
-          // carousel demo
-          $('#myCarousel').carousel()
-        })
-      }(window.jQuery)
-    </script>
     <script src="js/holder.js"></script>
   </body>
 </html>

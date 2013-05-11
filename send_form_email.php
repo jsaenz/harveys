@@ -1,5 +1,5 @@
 <?php
-if(isset($_POST['email'])) {
+if(isset($_POST['Email'])) {
      
     // EDIT THE 2 LINES BELOW AS REQUIRED
     $email_to = "saenzrugby@gmail.com";
@@ -13,41 +13,6 @@ if(isset($_POST['email'])) {
         echo $error."<br /><br />";
         echo "Please go back and fix these errors.<br /><br />";
         die();
-    }
-     
-    // validation expected data exists
-    if(!isset($_POST['First_Name']) ||
-        !isset($_POST['Last_Name']) ||
-        !isset($_POST['Phone_Fax']) ||
-        !isset($_POST['Measurement_Type']) ||
-        !isset($_POST['Height'])  ||
-        !isset($_POST['Weight']) || 
-        !isset($_POST['Ankle']) ||
-        !isset($_POST['Calf']) ||
-        !isset($_POST['Below_Knee']) ||
-        !isset($_POST['Knee']) ||
-        !isset($_POST['Thigh_Crotch']) ||
-        !isset($_POST['Thigh_5_Below_Crotch']) ||
-        !isset($_POST['Hips']) ||
-        !isset($_POST['Waist']) ||
-        !isset($_POST['Chest_at_Largest_Point']) ||
-        !isset($_POST['Elbow']) ||
-        !isset($_POST['Bicep']) ||
-        !isset($_POST['Upper_Bicep_at_Shoulder']) ||
-        !isset($_POST['Wrist_to_Elbow']) ||
-        !isset($_POST['Wrist_to_Underarm']) ||
-        !isset($_POST['Wrist_to_Center_of_Back']) ||
-        !isset($_POST['Shoulder_Seam_to_Waist']) ||
-        !isset($_POST['Shoulder_Seam_to_Crotch']) ||
-        !isset($_POST['Ankle_to_Knee']) ||
-        !isset($_POST['Ankle_to_Crotch']) ||
-        !isset($_POST['Crotch_to_Knee']) ||
-        !isset($_POST['Forehead_to_Back_of_Neck']) ||
-        !isset($_POST['Head_Circumference']) ||
-        !isset($_POST['Shoe_Size']) ||
-        !isset($_POST['Glove_Size']))
-       {
-        died('We are sorry, but there appears to be a problem with the form you submitted.');       
     }
      
     $First_Name = $_POST['First_Name']; // required

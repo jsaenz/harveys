@@ -372,6 +372,23 @@ $headers = 'From: '.$email_from."\r\n".
       <hr class="featurette-divider">
       Thank you for contacting us. We will be in touch with you very soon.
     </div>
+    <!-- /END THE FEATURETTES -->
+
+      <!-- FOOTER -->
+      <footer>
+        <p>Call Toll-Free 1-800-347-0054 &middot; &copy; 2013 Harvey's Divesuits, All Rights Reserved.</p>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+      </footer>
+    </div><!-- /.container -->
+
+    <!--javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/holder.js"></script>
+    </body>
+</html>
  
 <?php
 }

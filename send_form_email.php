@@ -308,8 +308,8 @@ $headers = 'From: '.$email_from."\r\n".
             <!--<img src="img/harveys-logo-name.jpg"title="Harveys logo" alt="Harveys logo">-->            
             <div class="nav-collapse collapse">
               <ul class="nav">
-                <li class="active"><a href="index.html">Home</a></li>
-                <li class="dropdown">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown active">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
                   <ul class="dropdown-menu">
                     <li><a href="dry_suits.html">Dry Suits</a></li>
@@ -318,7 +318,7 @@ $headers = 'From: '.$email_from."\r\n".
                     <li><a href="accessories.html">Accessories</a></li>
                     <li class="divider"></li>
                     <li><a href="sizes.html">Sizes</a></li>
-                    <li><a href="custom.html">Custom Department</a></li>
+                    <li class="active"><a href="custom.html">Custom Department</a></li>
                   </ul>
                 </li>
                 <li><a href="contact.html">Contact Us</a></li>
@@ -337,7 +337,9 @@ $headers = 'From: '.$email_from."\r\n".
       </div> <!-- /.container -->
     </div><!-- /.navbar-wrapper -->
 
-Thank you for contacting us. We will be in touch with you very soon.
+    <div>
+      Thank you for contacting us. We will be in touch with you very soon.
+    </div>
  
 <?php
 }

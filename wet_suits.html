@@ -76,6 +76,24 @@
     }
 
 
+    /* MARKETING CONTENT
+    -------------------------------------------------- */
+
+    /* Center align the text within the three columns below the carousel */
+    .marketing .span4 {
+      text-align: center;
+      color: #d0d0d0;
+
+    }
+    .marketing h2 {
+      font-weight: normal;
+    }
+    .marketing .span4 p {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+
     /* Featurettes
     ------------------------- */
 
@@ -117,6 +135,7 @@
   /*resize lead font*/
   .lead {
     font-size:14px;
+
   }
 
 
@@ -161,6 +180,9 @@
         font-size: 18px;
         line-height: 1;
       }
+      .marketing .span4 + .span4 {
+        margin-top: 40px;
+      }
     }
     </style>
 
@@ -200,7 +222,7 @@
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
                   <ul class="dropdown-menu">
                     <li><a href="dry_suits.html">Dry Suits</a></li>
-                    <li class="dropdown-submenu">
+                    <li class="dropdown-submenu active">
                     <a tabindex="-1" href="wet_suits.html">Wet Suits</a>
                     <ul class="dropdown-menu">
                       <li><a href="titanium_flex.html">Titanium Flex</a></li>
@@ -211,7 +233,7 @@
                     <li><a href="dry_suit_accessories.html">Dry Suit Accessories</a></li>
                     <li><a href="wet_suit_accessories.html">Wet Suit Accessories</a></li>
                     <li class="divider"></li>
-                    <li class="active"><a href="sizes.html">Sizes</a></li>
+                    <li><a href="sizes.html">Sizes</a></li>
                     <li><a href="custom.html">Custom Department</a></li>
                   </ul>
                 </li>
@@ -232,17 +254,37 @@
     </div><!-- /.navbar-wrapper -->
 
 
-    <!-- START THE FEATURETTES -->
-    <div class="container-featurettes">
+     <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing">
 
       <hr class="featurette-divider">
 
-      <div class="featurette" >
-        <h2 class="featurette-heading">Coming Soon!<br></h2>
-      </div>
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="span4">
+          <img class="img-circle" href="titanium_flex.html" data-src="holder.js/140x140" src="img/tflex_191_circle.jpg">
+          <h2>Titanium Flex</h2>
+          <p>Take a look at our exciting new Titanium Flex line.</p>
+          <a class="btn" href="titanium_flex.html">Read on &raquo;</a></p>
+        </div><!-- /.span4 -->
+        <div class="span4">
+          <img class="img-circle" data-src="holder.js/140x140" src="img/kobalt.jpg">
+          <h2>Kobalt Pro-Flex</h2>
+          <p>Take a look at a classic wet suit with a high tech twist.</p>
+          <p><a class="btn" href="kobalt.html">View details &raquo;</a></p>
+        </div><!-- /.span4 -->
+        <div class="span4">
+          <img class="img-circle" data-src="holder.js/140x140" src="img/soft_stretch.jpg">
+          <h2>Soft Stretch</h2>
+          <p>Our classic and most popular line of wet suits.</p>
+          <p><a class="btn" href="soft_stretch.html">Learn more &raquo;</a></p>
+        </div><!-- /.span4 -->
+      </div><!-- /.row -->
 
-      <hr class="featurette-divider">
-      <!-- /END THE FEATURETTES -->
+      <!-- END OF MARKETING -->
 
       <!-- FOOTER -->
       <footer>

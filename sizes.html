@@ -27,6 +27,14 @@
       text-align: center;
     }
 
+    .table td {
+      color: #a9a9a9;
+    }
+
+    .table th {
+      color: #a9a9a9;
+    }
+
     /* CUSTOMIZE THE NAVBAR
     -------------------------------------------------- */
 
@@ -86,13 +94,18 @@
       margin-right: auto;
     }
 
+    .featurette table {
+      color: #ffffff;
+    }
+
     .featurette-divider {
       margin: 60px 0; /* Space out the Bootstrap <hr> more */
     }
     .featurette {
       padding-top: 60px; /* Vertically center images part 1: add padding above and below text. */
-      overflow: hidden; /* Vertically center images part 2: clear their floats. */
       background: #213458;
+      font-size: 10px;
+      overflow: hidden;
     }
     .featurette-image {
       margin-top: 20px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
@@ -238,36 +251,198 @@
       <hr class="featurette-divider">
 
       <div class="featurette" >
-        <table class="table table-bordered table-hover">
-          <tr>
-            <thead>
-              <tr>
-                <th>Men's Sizing</th>
-                <th>XS</th>
-                <th>S</th>
-                <th>S Long*</th>
-                <th>M Short*</th>
-                <th>M</th>
-                <th>M Long*</th>
-                <th>L Short*</th>
-                <th>L</th>
-                <th>L Long*</th>
-                <th>XL Short*</th>
-                <th>XL</th>
-                <th>XL Long*</th>
-                <th>2XL</th>
-                <th>2XL Long*</th>
-                <th>3XL</th>
-                <th>3XL Long*</th>
-              </tr>
-            </thead>
-            <td>NOTE* FOR ALL SHORT AND LONG SUIT SIZES ADD A $25.00 DOLLAR ALTERATION CHARGE. 
-            </td>
-
-          </tr> 
-        </table>    
-        <table>
-        <tr>    
+        <table class="table table-bordered table-hover table-condensed">
+          <thead>
+            <th colspan="7">Men's Sizing</th>
+          </thead>
+          <thead>
+            <td>Size</td>
+            <td>Height</td>
+            <td>Weight</td>
+            <td>Chest</td>
+            <td>Waist</td>
+            <td>Leg Inseam</td>
+            <td>Arm Length</td>
+          </thead>
+          <tbody>
+            <tr>
+              <th>XS</th>
+              <td>5'2"-5'5"</td>
+              <td>110-126</td>
+              <td>32-33 </td>
+              <td>27-29 </td>
+              <td>26"</td>
+              <td>17"</td>
+            </tr>
+            <tr>
+              <th>S</th>
+              <td>5'5"-5'8"</td>
+              <td>126-140</td>
+              <td>34-36 </td>
+              <td>29-31 </td>
+              <td>27"</td>
+              <td>18"</td>
+            </tr> 
+            <tr>
+              <th>S Long*</th>
+              <td>5'8"-5'10"</td>
+              <td>136-145</td>
+              <td>34-36 </td>
+              <td>29-31 </td>
+              <td>29" </td>
+              <td>20" </td>
+            </tr>
+            <tr>
+              <th>M Short*</th>
+              <td>5'7"-5'9"</td>
+              <td>136-160</td>
+              <td>34-36 </td>
+              <td>31-33 </td>
+              <td>26" </td>
+              <td>17" </td>
+            </tr>
+              <th>M</th>
+              <td>5'9"-5'11"</td>
+              <td>145-160</td>
+              <td>36-38 </td>
+              <td>31-33 </td>
+              <td>28" </td>
+              <td>19" </td>
+            <tr>
+              <th>M Long*</th>
+              <td>5'11"-6'1"</td>
+              <td>155-165</td>
+              <td>36-38 </td>
+              <td>31-33 </td>
+              <td>30" </td>
+              <td>21" </td>
+            </tr>
+            <tr>
+              <th>ML</th>
+              <td>5'9"-6'</td>
+              <td>160-170</td>
+              <td>37-39 </td>
+              <td>33-34 </td>
+              <td>28" </td>
+              <td>19" </td>
+            </tr>
+            <tr>
+              <th>L Short*</th>
+              <td>5'7"-5'9"</td>
+              <td>165-175</td>
+              <td>39-41 </td>
+              <td>34-35 </td>
+              <td>27" </td>
+              <td>17" </td>
+            </tr>
+            <tr>
+              <th>L</th>
+              <td>5'10"-6'</td>
+              <td>170-180</td>
+              <td>39-41 </td>
+              <td>34-35 </td>
+              <td>29" </td>
+              <td>19" </td>
+            </tr>
+            <tr>
+              <th>L Long*</th>
+              <td>6'-6'2"</td>
+              <td>175-190</td>
+              <td>39-41</td>
+              <td>34-35 </td>
+              <td>31" </td>
+              <td>21" </td>
+            </tr>
+            <tr>
+              <th>XL Short*</th>
+              <td>5'7"-5'9"</td>
+              <td>175-195</td>
+              <td>41-44 </td>
+              <td>36-38 </td>
+              <td>27" </td>
+              <td>17" </td>
+            </tr>
+            <tr>
+              <th>XL</th>
+              <td>5'10"-6'</td>
+              <td>185-205</td>
+              <td>41-44 </td>
+              <td>36-38 </td>
+              <td>29" </td>
+              <td>19" </td>
+            </tr>
+            <tr>
+              <th>XL Long*</th>
+              <td>6'1"-6'3"</td>
+              <td>190-210</td>
+              <td>41-44 </td>
+              <td>36-38 </td>
+              <td>31" </td>
+              <td>21" </td>
+            </tr>
+            <tr>
+              <th>2XL</th>
+              <td>5'11"-6'1"</td>
+              <td>210-225</td>
+              <td>44-47 </td>
+              <td>38-40 </td>
+              <td>29 1/2" </td>
+              <td>19" </td>
+            </tr>
+            <tr>
+              <th>2XL Long*</th>
+              <td>6'1"-6'3"</td>
+              <td>215-230</td>
+              <td>44-47 </td>
+              <td>38-40 </td> 
+              <td>31 1/2" </td>
+              <td>21 1/2" </td>
+            </tr>
+            <tr>
+              <th>3XL</th>
+              <td>5'11"-6'1"</td>
+              <td>225-245</td>
+              <td>46-49 </td>
+              <td>40-44 </td>
+              <td>29 1/2" </td>
+              <td>19 1/2"</td> 
+            </tr>
+            <tr>
+              <th>3XL Long*</th>
+              <td>6'1"-6'3"</td>
+              <td>230-250</td>
+              <td>46-49</td>
+              <td>40-44 </td>
+              <td>31 1/2" </td>
+              <td>21 1/2"</td>
+            </tr>
+            <tr>
+              <td colspan="7">NOTE* FOR ALL SHORT AND LONG SUIT SIZES ADD A $25.00 DOLLAR ALTERATION CHARGE.</td>
+            </tr>
+          </tbody>
+        </table> 
+        <hr class="featurette-divider">
+        <table class="table table-bordered table-hover table-condensed">
+          <thead>
+            <th colspan="7">Women's Sizing</th>
+          </thead>
+          <thead>
+            <td>Size</td>
+            <td>Height</td>
+            <td>Weight</td>
+            <td>Chest</td>
+            <td>Waist</td>
+            <td>Leg Inseam</td>
+            <td>Arm Length</td>
+          </thead>
+          <tbody>
+            <tr>
+            </tr>
+            <tr>
+              <td colspan="7">NOTE* FOR ALL SHORT AND LONG SUIT SIZES ADD A $25.00 DOLLAR ALTERATION CHARGE.</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
       <hr class="featurette-divider">

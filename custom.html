@@ -23,6 +23,7 @@
 
     footer {
       background: #213458;
+      color: #d0d0d0;
       height: 60px;
       text-align: center;
     }
@@ -103,7 +104,8 @@
 
     .container-featurettes {
       margin-top: 100px;
-      width: 70%;
+      width: 80%;
+      color: #000;
       margin-left: auto;
       margin-right: auto;
     }
@@ -114,19 +116,8 @@
     .featurette {
       padding-top: 60px; /* Vertically center images part 1: add padding above and below text. */
       overflow: hidden; /* Vertically center images part 2: clear their floats. */
-      background: #213458;
+      background: #fff;
       text-align: center;
-    }
-    .featurette-image {
-      margin-top: 20px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
-    }
-
-    /* Give some space on the sides of the floated elements so text doesn't run right into it. */
-    .featurette-image.pull-left {
-      margin-right: 40px;
-    }
-    .featurette-image.pull-right {
-      margin-left: 40px;
     }
 
     /* Thin out the marketing headings */
@@ -160,13 +151,6 @@
       .featurette {
         height: auto;
         padding: 0;
-      }
-      .featurette-image.pull-left,
-      .featurette-image.pull-right {
-        display: block;
-        float: none;
-        max-width: 40%;
-        margin: 0 auto 20px;
       }
     }
 
@@ -265,82 +249,97 @@
 
       <div class="featurette">
         <h2 class="featurette-heading">Custom Department</h2>
-        <form method="post" action="send_form_email.php" onsubmit="return FrontPage_Form1_Validator(this)" language="JavaScript" name="FrontPage_Form1">
-          <h2><span class="muted">Customer Information</span></h2>
-          <p>
-          <p>First Name: &nbsp;<input type="text" name="First_Name" size="30" maxlength="30"><br>
-          Last Name: &nbsp;<input type="text" name="Last_Name" size="30" maxlength="30"><br>
-          Email: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="Email" size="30" maxlength="30"><br>
-          Phone/Fax:&nbsp;<input type="text" name="Phone_Fax" size="20"><br>
-          <i>(required for verification on custom suits)</i></p>
-          <p>Measurement:&nbsp;
-          <input type="radio" name="Measurement_Type" checked="checked" value="Imperial">Imperial&nbsp;&nbsp;
-          <input type="radio" name="Measurement_Type" value="Metric">Metric<br>
-          Gender:&nbsp;
-            <input type="radio" name="Gender" id="Male" checked="checked"value="Male" onchange="show(this.value)"/>Male&nbsp;&nbsp;
-            <input type="radio" name="Gender" id="female" value="Female" onchange="show2()"/>Female</p>
-          Height:&nbsp;<input type="text" name="Height" size="10" maxlength="10"><br>
-          Weight:&nbsp;<input type="text" name="Weight" size="10" maxlength="10"></p>
-          <table border="1" id="table1" width="500" cellspacing="4" cellpadding="6" align="center" style="background-color:#0066cc;">
-            <tr>
-              <td width="300" height="600">
-                <p align="center"><b>Customer Measurements</b></p>
-                <p align="left">&nbsp;<input type="text" name="Ankle" size="10" maxlength="10">&nbsp;Ankle</p>
-                <p align="left">&nbsp;<input type="text" name="Calf" size="10" maxlength="10">&nbsp;Calf</p>
-                <p align="left">&nbsp;<input type="text" name="Below_Knee" size="10" maxlength="10">&nbsp;Below Knee</p>
-                <p align="left">&nbsp;<input type="text" name="Knee" size="10" maxlength="10">&nbsp;Knee</p>
-                <p align="left">&nbsp;<input type="text" name="Thigh_Crotch" size="10" maxlength="10">&nbsp;Thigh at Crotch</p>
-                <p align="left">&nbsp;<input type="text" name="Thigh_5_Below_Crotch" size="10" maxlength="10">&nbsp;Thigh 5 nches Below Crotch</p>
-                <p align="left">&nbsp;<input type="text" name="Hips" size="10" maxlength="10">&nbsp;Hips at Widest Point</p>
-                <p align="left">&nbsp;<input type="text" name="Waist" size="10" maxlength="10">&nbsp;Waist at Navel</p>
-                <p align="left">&nbsp;<input type="text" name="Chest_at_Largest_Point" size="10" maxlength="10">&nbsp;Chest at Largest Point</p>
-                <p align="left">&nbsp;<input type="text" name="Neck" size="10" maxlength="10">&nbsp;Neck</p>
-                <p align="left">&nbsp;<input type="text" name="Wrist" size="10" maxlength="10">&nbsp;Wrist</p>
-                <p align="left">&nbsp;<input type="text" name="Forearm_at_Largest_Point" size="10" maxlength="10">&nbsp;Forearm at Largest Point</p>
-                <p align="left">&nbsp;<input type="text" name="Elbow" size="10" maxlength="10">&nbsp;Elbow</p>
-                <p align="left">&nbsp;<input type="text" name="Bicep" size="10" maxlength="10">&nbsp;Bicep</p>
-                <p align="left">&nbsp;<input type="text" name="Upper_Bicep_at_Shoulder" size="10" maxlength="10">&nbsp;Upper Bicep at Shoulder</p>
-                <p align="left">&nbsp;<input type="text" name="Wrist_to_Elbow" size="10" maxlength="10">&nbsp;Wrist to Elbow</p>
-                <p align="left">&nbsp;<input type="text" name="Wrist_to_Underarm" size="10" maxlength="10">&nbsp;Wrist to Underarm</p>
-                <p align="left">&nbsp;<input type="text" name="Wrist_to_Center_of_Back" size="10" maxlength="10">&nbsp;Wrist to Center of Back</p>
-                <p align="left">&nbsp;<input type="text" name="Shoulder_Seam_to_Waist" size="10" maxlength="10">&nbsp;Shoulder Seam to Waist</p>
-                <p align="left">&nbsp;<input type="text" name="Shoulder_Seam_to_Crotch" size="10" maxlength="10">&nbsp;Shoulder Seam to Crotch</p>
-                <p align="left">&nbsp;<input type="text" name="Ankle_to_Knee" size="10" maxlength="10">&nbsp;Ankle to Knee</p>
-                <p align="left">&nbsp;<input type="text" name="Ankle_to_Crotch" size="10" maxlength="10">&nbsp;Ankle to Crotch</p>
-                <p align="left">&nbsp;<input type="text" name="Crotch_to_Knee" size="10" maxlength="10">&nbsp;Crotch to Knee</p>
-                <p align="left">&nbsp;<input type="text" name="Shoulder_Seam_to_Ankle" size="10" maxlength="10">&nbsp;Shoulder Seam to Ankle<br>&nbsp;</p>
-              </td>
-            </tr>
-            <tr>
-              <td valign="top" width="300">
-                <div id="sh2" style="display:none;">
-                  <p align="center"><b>Required Female Measurements</b></p>
-                  <p align="left">&nbsp;<input type="text" name="T27" size="10">&nbsp;Shoulder Seam Bust Center</p>
-                  <p align="left">&nbsp;<input type="text" name="T28" size="10">&nbsp;Center to Center of Bust</p>
-                  <p align="left">&nbsp;<input type="text" name="T29" size="10">&nbsp;Chest above Bust</p>
-                  <p align="left">&nbsp;<input type="text" name="T30" size="10">&nbsp;Chest Below Bust</p>
-                  <p align="left">&nbsp;<input type="text" name="T31" size="6">&nbsp;Bra Size</p>
-                  <p align="left">&nbsp;<input type="text" name="T32" size="6">&nbsp;Cup Size</p>
-              </div>
-              </td>
-            </tr>
-            <tr>
-              <td valign="top" width="300">
-                <p align="center"><b>Hood Measurements</b></p>
-                <p align="left">&nbsp;<input type="text" name="T25" size="10">&nbsp;Forehead to Back of Neck</p>
-                <p align="left">&nbsp;<input type="text" name="T26" size="10">&nbsp;Head Circumference</p>
-                <p align="center"><b>Boot &amp; Glove Measurements</b></p>
-                <p align="left">&nbsp;<input type="text" name="T33" size="10">&nbsp;Shoe Size</p>
-                <p align="left">&nbsp;<input type="text" name="T34" size="10">&nbsp;Glove Size</p>
-              </td>
-            </tr>
-          </table>
-          <p>
-          <input type="submit" value="Submit Measurements" name="Submission_Button">
-          <input type="reset" value="Clear Form" name="Clear_Form"></p>
-        </form>
+        <div class="row">
+          <form method="post" action="send_form_email.php" onsubmit="return FrontPage_Form1_Validator(this)" language="JavaScript" name="FrontPage_Form1">
+            <h2><span class="muted">Customer Information</span></h2>
+            <p>
+            <p>First Name: &nbsp;<input class="input-medium" type="text" name="First_Name" size="30" maxlength="30"><br>
+            Last Name: &nbsp;<input class="input-medium" type="text" name="Last_Name" size="30" maxlength="30"><br>
+            Email: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="input-medium" type="text" name="Email" size="30" maxlength="30"><br>
+            Phone/Fax*:&nbsp;<input class="input-medium" type="text" name="Phone_Fax" size="20"><br>
+            <i>*(required for verification on custom suits)</i></p>
+            <p>Measurement:&nbsp;
+            <input type="radio" name="Measurement_Type" checked="checked" value="Imperial">Imperial&nbsp;&nbsp;
+            <input type="radio" name="Measurement_Type" value="Metric">Metric<br>
+            Gender:&nbsp;
+              <input type="radio" name="Gender" id="Male" checked="checked"value="Male" onchange="show(this.value)"/>Male&nbsp;&nbsp;
+              <input type="radio" name="Gender" id="female" value="Female" onchange="show2()"/>Female</p>
+            Height:&nbsp;<input class="input-mini" type="text" name="Height" size="10" maxlength="10"><br>
+            Weight:&nbsp;<input class="input-mini" type="text" name="Weight" size="10" maxlength="10"></p>
+            
+            <table class="table-bordered table-condensed" id="table1" width="700" align="center" style="background-color:#fff;">
+              <tr>
+                <td width="300" height="600">
+                  <p align="center"><b>Customer Measurements</b></p>
+                  <div class="span4">
+                    <p align="left">&nbsp;<input class="input-mini" type="text" name="Ankle" size="10" maxlength="10">&nbsp;Ankle</p>
+                    <p align="left">&nbsp;<input class="input-mini" type="text" name="Calf" size="10" maxlength="10">&nbsp;Calf</p>
+                    <p align="left">&nbsp;<input class="input-mini" type="text" name="Below_Knee" size="10" maxlength="10">&nbsp;Below Knee</p>
+                    <p align="left">&nbsp;<input class="input-mini" type="text" name="Knee" size="10" maxlength="10">&nbsp;Knee</p>
+                    <p align="left">&nbsp;<input class="input-mini" type="text" name="Thigh_Crotch" size="10" maxlength="10">&nbsp;Thigh at Crotch</p>
+                    <p align="left">&nbsp;<input class="input-mini" type="text" name="Thigh_5_Below_Crotch" size="10" maxlength="10">&nbsp;Thigh 5 Inches Below Crotch</p>
+                    <p align="left">&nbsp;<input class="input-mini" type="text" name="Hips" size="10" maxlength="10">&nbsp;Hips at Widest Point</p>
+                    <p align="left">&nbsp;<input class="input-mini" type="text" name="Waist" size="10" maxlength="10">&nbsp;Waist at Navel</p>
+                    <p align="left">&nbsp;<input class="input-mini" type="text" name="Chest_at_Largest_Point" size="10" maxlength="10">&nbsp;Chest at Largest Point</p>
+                    <p align="left">&nbsp;<input class="input-mini" type="text" name="Neck" size="10" maxlength="10">&nbsp;Neck</p>
+                    <p align="left">&nbsp;<input class="input-mini" type="text" name="Wrist" size="10" maxlength="10">&nbsp;Wrist</p>
+                    <p align="left">&nbsp;<input class="input-mini" type="text" name="Forearm_at_Largest_Point" size="10" maxlength="10">&nbsp;Forearm at Largest Point</p>
+                  </div><!-- /.span4 -->
+                  <div class="span4">
+                    <p align="left">&nbsp;<input class="input-mini" type="text" name="Elbow" size="10" maxlength="10">&nbsp;Elbow</p>
+                    <p align="left">&nbsp;<input class="input-mini" type="text" name="Bicep" size="10" maxlength="10">&nbsp;Bicep</p>
+                    <p align="left">&nbsp;<input class="input-mini" type="text" name="Upper_Bicep_at_Shoulder" size="10" maxlength="10">&nbsp;Upper Bicep at Shoulder</p>
+                    <p align="left">&nbsp;<input class="input-mini" type="text" name="Wrist_to_Elbow" size="10" maxlength="10">&nbsp;Wrist to Elbow</p>
+                    <p align="left">&nbsp;<input class="input-mini" type="text" name="Wrist_to_Underarm" size="10" maxlength="10">&nbsp;Wrist to Underarm</p>
+                    <p align="left">&nbsp;<input class="input-mini" type="text" name="Wrist_to_Center_of_Back" size="10" maxlength="10">&nbsp;Wrist to Center of Back</p>
+                    <p align="left">&nbsp;<input class="input-mini" type="text" name="Shoulder_Seam_to_Waist" size="10" maxlength="10">&nbsp;Shoulder Seam to Waist</p>
+                    <p align="left">&nbsp;<input class="input-mini" type="text" name="Shoulder_Seam_to_Crotch" size="10" maxlength="10">&nbsp;Shoulder Seam to Crotch</p>
+                    <p align="left">&nbsp;<input class="input-mini" type="text" name="Ankle_to_Knee" size="10" maxlength="10">&nbsp;Ankle to Knee</p>
+                    <p align="left">&nbsp;<input class="input-mini" type="text" name="Ankle_to_Crotch" size="10" maxlength="10">&nbsp;Ankle to Crotch</p>
+                    <p align="left">&nbsp;<input class="input-mini" type="text" name="Crotch_to_Knee" size="10" maxlength="10">&nbsp;Crotch to Knee</p>
+                    <p align="left">&nbsp;<input class="input-mini" type="text" name="Shoulder_Seam_to_Ankle" size="10" maxlength="10">&nbsp;Shoulder Seam to Ankle<br>&nbsp;</p>
+                  </div><!-- /.span4 -->
+                </td>
+              </tr>
+              <tr>
+                <td valign="top" width="300">
+                  <div class="span4">
+                    <p align="center"><b>Hood Measurements</b></p>
+                    <p align="left">&nbsp;<input class="input-mini" type="text" name="T25" size="10">&nbsp;Forehead to Back of Neck</p>
+                    <p align="left">&nbsp;<input class="input-mini" type="text" name="T26" size="10">&nbsp;Head Circumference</p>
+                  </div><!-- /.span4 -->
+                  <div class="span4">
+                    <p align="center"><b>Boot &amp; Glove Measurements</b></p>
+                    <p align="left">&nbsp;<input class="input-mini" type="text" name="T33" size="10">&nbsp;Shoe Size</p>
+                    <p align="left">&nbsp;<input class="input-mini" type="text" name="T34" size="10">&nbsp;Glove Size</p>
+                  </div><!--/.span4-->
+                </td>
+              </tr>
+              <tr>
+                <td valign="top" width="300">
+                  <div id="sh2" style="display:none;">
+                    <p align="center"><b>Required Female Measurements</b></p>
+                    <div class="span4">
+                      <p align="left">&nbsp;<input class="input-mini" type="text" name="T27" size="10">&nbsp;Shoulder Seam Bust Center</p>
+                      <p align="left">&nbsp;<input class="input-mini" type="text" name="T28" size="10">&nbsp;Center to Center of Bust</p>
+                      <p align="left">&nbsp;<input class="input-mini" type="text" name="T29" size="10">&nbsp;Chest above Bust</p>
+                    </div><!--/.span4-->
+                    <div class="span4">
+                      <p align="left">&nbsp;<input class="input-mini" type="text" name="T30" size="10">&nbsp;Chest Below Bust</p>
+                      <p align="left">&nbsp;<input class="input-mini" type="text" name="T31" size="6">&nbsp;Bra Size</p>
+                      <p align="left">&nbsp;<input class="input-mini" type="text" name="T32" size="6">&nbsp;Cup Size</p>
+                    </div><!-- /.span4-->
+                  </div><!-- /.sh2-->
+                </td>
+              </tr>
+            </table><!--/.table-->
+            <p>
+            <input type="submit" value="Submit Measurements" name="Submission_Button">
+            <input type="reset" value="Clear Form" name="Clear_Form"></p>
+          </form><!--/.form-->
+        </div><!--/.row-->
         </p>
-      </div>
+      </div><!--/.featurette-->
 
       <hr class="featurette-divider">
       <!-- /END THE FEATURETTES -->

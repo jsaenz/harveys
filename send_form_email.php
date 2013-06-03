@@ -37,8 +37,8 @@
   $email_message .= "<tr style='background: #eee;'><td>Crotch to Knee</td><td>".strip_tags($_POST['Crotch_to_Knee']). "</td></tr>";
   $email_message .= '<tr><td>Forehead to Back of Neck: </td><td>'.strip_tags($_POST['Forehead_to_Back_of_Neck']). "</td></tr>";
   $email_message .= "<tr style='background: #eee;'><td>Head Circumference </td><td>".strip_tags($_POST['Head_Circumference']). "</td></tr>";
-  $email_message .= '<tr><td>Shoe Size: </td><td>'.strip_tags($_POST['Shoe_Size']). "</td></tr>";
-  $email_message .= "<tr style='background: #eee;'><td>Glove Size: </td><td>".strip_tags($_POST['Glove_Size']). "</td></tr>";
+  $email_message .= '<tr><td>Shoe Size: </td><td>'.strip_tags($_POST['Shoe']). "</td></tr>";
+  $email_message .= "<tr style='background: #eee;'><td>Glove Size: </td><td>".strip_tags($_POST['Glove']). "</td></tr>";
   if ($_POST['Gender'] == 'Female') {
     $email_message .= '<tr><td>Shoulder to Center of Bust: </td><td>'.strip_tags($_POST['Shoulder_to_Bust']). "</td></tr>";
     $email_message .= "<tr style='background: #eee;'><td>Center to Center of Bust: </td><td>".strip_tags($_POST['Center_to_Bust']). "</td></tr>";

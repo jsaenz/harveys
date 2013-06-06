@@ -1,54 +1,69 @@
 <?php
-if(isset($_POST['Email'])) {
      
-    // EDIT THE 2 LINES BELOW AS REQUIRED
-    $email_to = "saenzrugby@gmail.com";
-    $email_subject = "test email";
-     
-     
-    function died($error) {
-        // your error code can go here
-        echo "We are very sorry, but there were error(s) found with the form you submitted. ";
-        echo "These errors appear below.<br /><br />";
-        echo $error."<br /><br />";
-        echo "Please go back and fix these errors.<br /><br />";
-        die();
-    }
-     
-    $First_Name = $_POST['First_Name'];
-    $Last_Name = $_POST['Last_Name'];
-    $email_from = $_POST['Email'];
-    $Phone_Fax = $_POST['Phone_Fax'];
-    $comments = $_POST['comments']; 
-     
-    $email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
-  if(!preg_match($email_exp,$email_from)) {
-    $error_message = 'The Email Address you entered does not appear to be valid.<br />';
+  // Create our email body
+  $email_to = "jsaenz@cs.nmsu.edu";
+  $email_subject = "Custom WetSuit Order";
+  $email_from = $_POST['Email'];
+  $measurement = $_POST['Measurement_Type'];
+  $email_message = '<html><body>';
+  $email_message .= '<h1>Custom order below.</h1>';
+   
+  $email_message .= '<table rules="all" style="border-color: #666;" cellpadding="10">';
+  $email_message .= "<tr style='background: #eee;'><td><strong>Name:</strong> </td><td>".strip_tags($_POST['First_Name'])." ".strip_tags($_POST['Last_Name']) . "</td></tr>";
+  $email_message .= '<tr><td>Email: </td><td>'.strip_tags($email_from).'</td></tr><tr><td>Phone:</td><td>'.strip_tags($_POST['Phone_Fax']).'</td></tr>';
+  $email_message .= '<tr><td>Gender:</td><td>'.strip_tags($_POST['Gender']).'</td></tr>';
+  $email_message .= "<tr style='background: #eee;'><td>Measurement Type: </td><td>".strip_tags($_POST['Measurement_Type']). "</td></tr>";
+  $email_message .= '<tr><td>Height: </td><td>'.strip_tags($_POST['Height']). "</td></tr>";
+  $email_message .= "<tr style='background: #eee;'><td>Weight: </td><td>".strip_tags($_POST['Weight']). "</td></tr>";
+  $email_message .= '<tr><td>Ankle: </td><td>'.strip_tags($_POST['Ankle']). "</td></tr>";
+  $email_message .= "<tr style='background: #eee;'><td>Calf: </td><td>".strip_tags($_POST['Calf']). "</td></tr>";
+  $email_message .= '<tr><td>Below Knee: </td><td>'.strip_tags($_POST['Below_Knee']). "</td></tr>";
+  $email_message .= "<tr><tr style='background: #eee;'><td>Knee: </td><td>".strip_tags($_POST['Knee']). "</td></tr>";
+  $email_message .= '<tr><td>Thigh to Crotch: </td><td>'.strip_tags($_POST['Thigh_Crotch']). "</td></tr>";
+  $email_message .= "<tr style='background: #eee;'><td>Thigh 5 Below Crotch: </td><td>".strip_tags($_POST['Thigh_5_Below_Crotch']). "</td></tr>";
+  $email_message .= '<tr><td>Hips: </td><td>'.strip_tags($_POST['Hips']). "</td></tr>";
+  $email_message .= "<tr><tr style='background: #eee;'><td>Waist: </td><td>".strip_tags($_POST['Waist']). "</td></tr>";
+  $email_message .= '<td>Chest at Largest Point: </td><td>'.strip_tags($_POST['Chest_at_Largest_Point']). "</td></tr>";
+  $email_message .= "<tr><tr style='background: #eee;'><td>Elbow: </td><td>".strip_tags($_POST['Elbow']). "</td></tr>";
+  $email_message .= '<td>Bicep: </td><td>'.strip_tags($_POST['Bicep']). "</td></tr>";
+  $email_message .= "<tr><tr style='background: #eee;'><td>Upper Bicep at Shoulder: </td><td>".strip_tags($_POST['Upper_Bicep_at_Shoulder']). "</td></tr>";
+  $email_message .= '<tr><td>Wrist to Elbow: </td><td>'.strip_tags($_POST['Wrist_to_Elbow']). "</td></tr>";
+  $email_message .= "<tr style='background: #eee;'><td>Wrist to Underarm: </td><td>".strip_tags($_POST['Wrist_to_Underarm']). "</td></tr>";
+  $email_message .= '<tr><td>Wrist to Center of Back: </td><td>'.strip_tags($_POST['Wrist_to_Center_of_Back']). "</td></tr>";
+  $email_message .= "<tr style='background: #eee;'><td>Shoulder Seam to Waist: </td><td>".strip_tags($_POST['Shoulder_Seam_to_Waist']). "</td></tr>";
+  $email_message .= '<tr><td>Shoulder Seam to Crotch: </td><td>'.strip_tags($_POST['Shoulder_Seam_to_Crotch']). "</td></tr>";
+  $email_message .= "<tr style='background: #eee;'><td>Ankle to Knee: </td><td>".strip_tags($_POST['Ankle_to_Knee']). "</td></tr>";
+  $email_message .= '<tr><td>Ankle to Crotch: </td><td>'.strip_tags($_POST['Ankle_to_Crotch']). "</td></tr>";
+  $email_message .= "<tr style='background: #eee;'><td>Crotch to Knee</td><td>".strip_tags($_POST['Crotch_to_Knee']). "</td></tr>";
+  $email_message .= '<tr><td>Forehead to Back of Neck: </td><td>'.strip_tags($_POST['Forehead_to_Back_of_Neck']). "</td></tr>";
+  $email_message .= "<tr style='background: #eee;'><td>Head Circumference </td><td>".strip_tags($_POST['Head_Circumference']). "</td></tr>";
+  $email_message .= '<tr><td>Shoe Size: </td><td>'.strip_tags($_POST['Shoe']). "</td></tr>";
+  $email_message .= "<tr style='background: #eee;'><td>Glove Size: </td><td>".strip_tags($_POST['Glove']). "</td></tr>";
+  if ($_POST['Gender'] == 'Female') {
+    $email_message .= '<tr><td>Shoulder to Center of Bust: </td><td>'.strip_tags($_POST['Shoulder_to_Bust']). "</td></tr>";
+    $email_message .= "<tr style='background: #eee;'><td>Center to Center of Bust: </td><td>".strip_tags($_POST['Center_to_Bust']). "</td></tr>";
+    $email_message .= '<tr><td>Chest Above Bust: </td><td>'.strip_tags($_POST['Chest_Above_Bust']). "</td></tr>";
+    $email_message .= "<tr style='background: #eee;'><td>Chest Below Bust: </td><td>".strip_tags($_POST['Chest_Below_Bust']). "</td></tr>";
+    $email_message .= '<tr><td>Bra Size: </td><td>'.strip_tags($_POST['Bra']). "</td></tr>";
+    $email_message .= "<tr style='background: #eee;'><td>Cup Size: </td><td>".strip_tags($_POST['Cup']). "</td></tr>";   
   }
-  if(strlen($error_message) > 0) {
-    died($error_message);
-  }
-    $email_message = "Form details below.\n\n";
-     
-    function clean_string($string) {
-      $bad = array("content-type","bcc:","to:","cc:","href");
-      return str_replace($bad,"",$string);
-    }
-     
-    $email_message .= "First Name: ".clean_string($First_Name)."\n";
-    $email_message .= "Last Name: ".clean_string($Last_Name)."\n";
-    $email_message .= "Email: ".clean_string($email_from)."\n";
-    $email_message .= "Phone_Fax: ".clean_string($Phone_Fax)."\n";
-     
-     
-// create email headers
-$headers = 'From: '.$email_from."\r\n".
-'Reply-To: '.$email_from."\r\n" .
-'X-Mailer: PHP/' . phpversion();
-@mail($email_to, $email_subject, $email_message, $headers);  
+  $email_message .= '</table>'; 
+  $email_message .= '</body></html>';
+
+
+  // create email headers
+  $headers = "From: ".$email_from."\n";
+  $headers .="Reply-to: ".$email_from."\n";
+  $headers .= "Return-path: ".$email_from.".\n";
+  $headers .= "Content-Type: text/html; charset=windows-1252\n";
+  $headers .= "Content-Transfer-Encoding: 7bit\n";
+  $headers .= "X-Priority: 3\n";
+  $headers .= "MIME-Version: 1.0\n";
+  $headers .= "Organization: Harvey's Divesuits\r\n"; 
+  $headers .= 'X-Mailer: PHP/' . phpversion();
+  $headers .= "\n\n";
 ?>
  
-<!-- include success html here -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -78,6 +93,7 @@ $headers = 'From: '.$email_from."\r\n".
       background: #213458;
       height: 60px;
       text-align: center;
+      padding: 5px 5px 5px;
     }
 
     /* CUSTOMIZE THE NAVBAR
@@ -115,7 +131,7 @@ $headers = 'From: '.$email_from."\r\n".
       
       height: 50px;
       width: 150px;
-}
+    }
     }
 
     /* Navbar links: increase padding for taller navbar */
@@ -126,81 +142,6 @@ $headers = 'From: '.$email_from."\r\n".
     /* Offset the responsive button for proper vertical alignment */
     .navbar .btn-navbar {
       margin-top: 10px;
-    }
-
-
-
-    /* CUSTOMIZE THE CAROUSEL
-    -------------------------------------------------- */
-
-    /* Carousel base class */
-    .carousel {
-      margin-bottom: 60px;
-      max-width: 1650px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .carousel .container {
-      position: relative;
-      z-index: 9;
-    }
-
-    .carousel-control {
-      height: 80px;
-      margin-top: 0;
-      font-size: 120px;
-      text-shadow: 0 1px 1px rgba(0,0,0,.4);
-      background-color: transparent;
-      border: 0;
-      z-index: 10;
-    }
-
-    .carousel .item {
-      height: 500px;
-    }
-    .carousel img {
-      position: absolute;
-      top: 0;
-      right: 0;
-      height: 500px;
-    }
-
-    .carousel-caption {
-      background-color: transparent;
-      position: static;
-      max-width: 550px;
-      padding: 0 20px;
-      margin-top: 200px;
-    }
-    .carousel-caption h1,
-    .carousel-caption .lead {
-      margin: 0;
-      line-height: 1.25;
-      color: #d0d0d0;
-      text-shadow: 0 1px 1px rgba(0,0,0,.4);
-    }
-    .carousel-caption .btn {
-      margin-top: 10px;
-    }
-
-
-
-    /* MARKETING CONTENT
-    -------------------------------------------------- */
-
-    /* Center align the text within the three columns below the carousel */
-    .marketing .span4 {
-      text-align: center;
-      color: #d0d0d0;
-
-    }
-    .marketing h2 {
-      font-weight: normal;
-    }
-    .marketing .span4 p {
-      margin-left: 10px;
-      margin-right: 10px;
     }
 
  /* Featurettes
@@ -222,17 +163,6 @@ $headers = 'From: '.$email_from."\r\n".
       background: #213458;
       text-align: center;
     }
-    .featurette-image {
-      margin-top: 20px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
-    }
-
-    /* Give some space on the sides of the floated elements so text doesn't run right into it. */
-    .featurette-image.pull-left {
-      margin-right: 40px;
-    }
-    .featurette-image.pull-right {
-      margin-left: 40px;
-    }
 
     /* Thin out the marketing headings */
     .featurette-heading {
@@ -241,12 +171,6 @@ $headers = 'From: '.$email_from."\r\n".
       line-height: 1;
       letter-spacing: -1px;
     }
-
-    /*resize lead font*/
-    .lead {
-      font-size:14px;
-    }
-
 
     /* RESPONSIVE CSS
     -------------------------------------------------- */
@@ -266,13 +190,6 @@ $headers = 'From: '.$email_from."\r\n".
         height: auto;
         padding: 0;
       }
-      .featurette-image.pull-left,
-      .featurette-image.pull-right {
-        display: block;
-        float: none;
-        max-width: 40%;
-        margin: 0 auto 20px;
-      }
     }
 
 
@@ -288,9 +205,6 @@ $headers = 'From: '.$email_from."\r\n".
       .featurette .lead {
         font-size: 18px;
         line-height: 1;
-      }
-      .marketing .span4 + .span4 {
-        margin-top: 40px;
       }
     }
     </style>
@@ -362,9 +276,16 @@ $headers = 'From: '.$email_from."\r\n".
 
       <hr class="featurette-divider">
 
-      <div class="featurette" >
-        Thank you for contacting us. We will be in touch with you very soon.
-    </div>
+      <div class="featurette">
+        <?php if (mail($email_to, $email_subject, $email_message, $headers)) { ?>
+          <h2 class="featurette-heading">Thank you for submitting a custom order!</h2><br> 
+          <p>We will be in touch with you very soon.</p>
+          <p><a href="index.php">Return to Homepage</a></p>
+        <?php } else { ?>
+          <h2 class="featurette-heading">There was an error submitting your order!</h2><br> 
+          <p>Please give us a call to complete your order.</p>
+        <?php } ?>
+      </div>
 
     <hr class="featurette-divider">
     <!-- /END THE FEATURETTES -->
@@ -382,9 +303,5 @@ $headers = 'From: '.$email_from."\r\n".
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/holder.js"></script>
-    </body>
+  </body>
 </html>
- 
-<?php
-}
-?>

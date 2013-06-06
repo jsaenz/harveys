@@ -93,6 +93,7 @@
       background: #213458;
       height: 60px;
       text-align: center;
+      padding: 5px 5px 5px;
     }
 
     /* CUSTOMIZE THE NAVBAR

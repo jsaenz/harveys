@@ -19,7 +19,7 @@
   $email_message .= "<tr style='background: #eee;'><td>Calf: </td><td>".strip_tags($_POST['Calf']). "</td></tr>";
   $email_message .= '<tr><td>Below Knee: </td><td>'.strip_tags($_POST['Below_Knee']). "</td></tr>";
   $email_message .= "<tr><tr style='background: #eee;'><td>Knee: </td><td>".strip_tags($_POST['Knee']). "</td></tr>";
-  $email_message .= '<tr><td>Thigh to Crotch: </td><td>'.strip_tags($_POST['Thigh_Crotch']). "</td></tr>";
+  $email_message .= '<tr><td>Thigh at Crotch: </td><td>'.strip_tags($_POST['Thigh_Crotch']). "</td></tr>";
   $email_message .= "<tr style='background: #eee;'><td>Thigh 5 Below Crotch: </td><td>".strip_tags($_POST['Thigh_5_Below_Crotch']). "</td></tr>";
   $email_message .= '<tr><td>Hips: </td><td>'.strip_tags($_POST['Hips']). "</td></tr>";
   $email_message .= "<tr><tr style='background: #eee;'><td>Waist: </td><td>".strip_tags($_POST['Waist']). "</td></tr>";
